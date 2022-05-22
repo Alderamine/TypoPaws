@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Assets/Key logo.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <main class="main">
+            <div class="logo_ad-container">
+                <div class="logo_ad-container-logo">
+                    <img src="/Assets/logo.png" alt="Logo" title="TypoPaws">
+                </div>
+
+                <div class="menu-container">
+                    <div class="menu-container-button"></div>
+                </div>
+            </div>
+
+            <article class="preferences">
+                <section class="preferences-section">
+                    <div class="section-header">
+                        <h1>General</h1>
+                    </div>
+                    <div class="preferences-general">
+                        <div class="preferences-general-preference">
+                            <label for="language">Select language
+                            </label>
+                            <select name="language" id="language" class="select-pref">
+                                <option value="english(uk)" default>English(UK)</option>
+                                <option value="english(us)">English(US)</option>
+                                <option value="russian">Russian</option>
+                                <option value="ukrainian">Ukrainian</option>
+                            </select>
+                        </div>
+                        <div class="preferences-general-preference">
+                            <label for="skip-mistakes">Skip mistakes</label>
+                            <input type="checkbox" name="skip-mistakes" id="skip-mistakes" class="checkbox-pref">
+                            <div class="checker" id="skip-mistakes-checker"></div>
+                        </div>
+                        <div class="preferences-general-preference">
+                            <label for="quick-start">Quick start:</label>
+                            <input type="text" value="command+s" name="quick-start" id="quick-start" class="key-prep">
+                        </div>
+                        <div class="preferences-general-preference">
+                            <label for="hide-menu">Hide/show menu</label>
+                            <input type="text" name="hide-menu" value="none" class="key-prep">
+                        </div>
+                    </div>
+
+                </section>
+                <section class="preferences-section">
+                    <div class="section-header">
+                        <h1>Appearance</h1>
+                    </div>
+
+                    <div class="preferences-appearance">
+                        <div class="preferences-appearance-preference">
+                            <label for="font">Select language</label>
+                            <select name="font" id="font" class="select-pref">
+                                <option value="inconsolata" default>Inconsolata</option>
+                                <option value="inconsolata">Inconsolata</option>
+                                <option value="inconsolata">Inconsolata</option>
+                                <option value="inconsolata">Inconsolata</option>
+                            </select>
+                        </div>
+                        <div class="preferences-appearance-preference">
+                            <label for="bold">Make text bold</label>
+                            <input type="checkbox" name="bold" id="bold" class="checkbox-pref">
+                            <div class="checker" id="bold-checker"></div>
+                        </div>
+                        <div class="preferences-appearance-preference">
+                            <label for="focus">Focus mode</label>
+                            <input type="checkbox" name="focus" id="focus" class="checkbox-pref">
+                            <div class="checker" id="focus-checker"></div>
+                        </div>
+                        <div class="preferences-appearance-preference">
+                            <label for="points">Display points</label>
+                            <input type="checkbox" name="points" id="points" class="checkbox-pref">
+                            <div class="checker" id="points-checker"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="preferences-section">
+                    <div class="section-header">
+                        <h1>Use custome text</h1>
+                    </div>
+                    <div class="preferences-section-par">
+                        <textarea name="custome-text" id="custome-text" class="area-prep"
+                            placeholder="Start typing here..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Add</button>
+                </section>
+
+            </article>
+
+        </main>
+
+        <nav class="nav">
+            <div class="nav_container">
+                <a href="index.html" class="nav_link">
+                    <img src="/Assets/Keyboard icon.png" alt="Practise" class="nav_link-icon" title="Practise">
+                </a>
+                <a href="Preferences.html" class="nav_link">
+                    <img src="/Assets/Gear icon.png" alt="Settings" class="nav_link-icon" title="Settings">
+                </a>
+                <a href="info.html" class="nav_link">
+                    <img src="/Assets/Info icon.png" alt="Info" class="nav_link-icon" title="Info">
+                </a>
+                <a href="#" class="nav_link">
+                    <img src="/Assets/github icon.svg" alt="Github" class="nav_link-icon" title="Github">
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="footer">
+        <div class="footer_contact-header">
+            <p>Contact me:</p>
+        </div>
+        <div class="footer_contact">
+            <a href="">
+                <img src="/Assets/ArrowDownRightCircle.png" alt="Arrow down">
+                <p>My website</p>
+            </a>
+        </div>
+        <div class="footer_contact">
+            <a href="">
+                <img src="/Assets/Telegram.png" alt="Telegram">
+                <p>Telegram</p>
+            </a>
+        </div>
+        <div class="footer_contact">
+            <a href="">
+                <img src="/Assets/Mailbox.png" alt="Mail">
+                <p>Mail</p>
+            </a>
+        </div>
+        <div class="footer_contact">
+            <a href="">
+                <img src="/Assets/Twitter.png" alt="Twitter">
+                <p>Twitter</p>
+            </a>
+        </div>
+    </div>
+
+    <script src="/js/preferences.js"></script>
+    <script src="/js/nav_animation.js"></script>
+</body>
+
+</html>

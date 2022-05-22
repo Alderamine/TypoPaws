@@ -1,0 +1,131 @@
+@use "variables" as var;
+
+.ad-centralizer {
+    flex-grow: 1;
+}
+
+.logo_ad-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    justify-content: space-between;
+
+    &-logo {
+        text-align: left;
+        img {
+            width: 200px;
+            height: auto;
+        }
+    }
+
+    &-ad {
+        margin: 0 auto;
+        width: 700px;
+
+        &-content {
+            margin: 0 auto;
+            padding: 0 16px;
+            overflow: hidden;
+            display: flex;
+            font: var.$regular;
+            height: 50px;
+            background: var.$secondary-color;
+            justify-content: space-between;
+            border-radius: 25px;
+            box-shadow: 0px 14px 6px rgba(0, 0, 0, 0.01), 0px 8px 5px rgba(0, 0, 0, 0.03),
+                0px 4px 4px rgba(0, 0, 0, 0.04), 0px 1px 2px rgba(0, 0, 0, 0.05), 0px 0px 0px rgba(0, 0, 0, 0.05);
+        }
+
+        &-message {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            align-items: center;
+        }
+
+        &-close {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &-icon img {
+            width: 24px;
+            height: auto;
+        }
+
+        &-templates {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        &-template {
+            transform: skewX(-45deg);
+            background: var.$secondary-container-color;
+            img {
+                transform: skewX(45deg);
+                width: 80px;
+                height: auto;
+            }
+        }
+    }
+}
+
+.menu-container {
+    z-index: 1000;
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
+    &-button {
+        width: 24px;
+        height: 2px;
+        background: black;
+        border-radius: 6px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    &-button::before,
+    &-button::after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background: black;
+        border-radius: 6px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    &-button::before {
+        transform: translateY(-8px);
+    }
+
+    &-button::after {
+        transform: translateY(8px);
+    }
+}
+
+.open {
+    .menu-container-button {
+        transform: translateX(-24px);
+        background: transparent;
+        position: fixed;
+    }
+
+    .menu-container-button::before {
+        transform: rotate(45deg) translate(22px, -22px);
+    }
+
+    .menu-container-button::after {
+        transform: rotate(-45deg) translate(22px, 22px);
+    }
+}

@@ -1,0 +1,98 @@
+@use 'variables' as var;
+
+.select-pref {
+    font: var.$regular-bg;
+    background-color: none;
+    border: none;
+    padding: 8px;
+
+    &:focus {
+        border-radius: 8px;
+        outline: 2px solid var.$secondary-container-color;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.checkbox-pref {
+    appearance: none;
+    height: 50px;
+    width: 100px;
+    background-color: var.$secondary-color;
+    opacity: 0.9;
+    transition: opacity 0.5s;
+    border-radius: 8px;
+    &:focus {
+        border-radius: 8px;
+        outline: 2px solid var.$secondary-container-color;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.checker {
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    height: 50px;
+    width: 50px;
+    opacity: 0.9;
+    transition: right 0.5s, opacity 0.5s; 
+    background-color: var.$secondary-container-color;
+    pointer-events: none;
+}
+
+.key-prep {
+    width: 100px;
+    height: 50px;
+    appearance: none;
+    font: var.$regular-bg;
+    background-color: var.$secondary-container-color;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    opacity: 0.7;
+    &:focus {
+        outline: none;
+        opacity: 1;
+    }
+}
+
+.area-prep {
+    padding: 16px;
+    border: none;
+    outline: none;
+    background-color: var.$secondary-color;
+    appearance: none;
+    margin-top: 48px;
+    max-width: 100%;
+    min-width: 100%;
+    resize: none;
+    height: 256px;
+    font:var.$regular-bg;
+    border-radius: 25px;
+
+    &::placeholder {
+        font: var.$regular;
+    }
+
+    &:focus {
+        outline: 2px solid var.$secondary-container-color;
+    }
+
+}
+
+.submit-button {
+    margin-top: 24px;
+    float: right;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: var.$secondary-container-color;
+    font: var.$regular;
+    font-size: 20px;
+}

@@ -1,0 +1,16 @@
+@forward 'nav';
+@forward 'main';
+@forward 'footer';
+@forward 'modal';
+@use 'variables' as var;
+
+.container {
+    position: relative;
+    display: flex;
+    max-width: 1400px;
+    justify-content: left;
+    gap: 24px;
+    background-color: var.$primary-color;
+    margin: 0 auto;
+}
+
