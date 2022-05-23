@@ -1,6 +1,7 @@
 // --> variables declaration
 const text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis architecto nihil exercitationem porro commodi ? Deleniti in itaque doloremque quisquam officiis perferendis iure! Dolores repellat illum temporibus nam recusandae laborum maiores iure ex beatae aliquid est, voluptas cumque eaque sit rem sint quaerat ad saepe fugit ? Quos aliquam, commodi quas sit, unde cum pariatur eligendi beatae distinctio laudantium dolores voluptatibus iste quia natus culpa sint quae hic perspiciatis consequatur laboriosam minima nisi.Officia, nesciunt expedita placeat deserunt quam iste! Unde aliquid, assumenda explicabo minima earum eum ipsa nobis fuga, deleniti, debitis pariatur blanditiis odio tempore saepe maxime nostrum necessitatibus asperiores expedita! Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis architecto nihil exercitationem porro commodi ? Deleniti in itaque doloremque quisquam officiis perferendis iure! Dolores repellat illum temporibus nam recusandae laborum maiores iure ex beatae aliquid est, voluptas cumque eaque sit rem sint quaerat ad saepe fugit ? Quos aliquam, commodi quas sit, unde cum pariatur eligendi beatae distinctio laudantium dolores voluptatibus iste quia natus culpa sint quae hic perspiciatis consequatur laboriosam minima nisi.Officia, nesciunt expedita placeat deserunt quam iste! Unde aliquid, assumenda explicabo minima earum eum ipsa nobis fuga, deleniti, debitis pariatur blanditiis odio tempore saepe maxime nostrum necessitatibus asperiores expedita!'
 const typerSet = text.split(/\W\s*/).filter(i => i != '').map(i => i.toLowerCase());
+const punctuationSet = [',', '.', '!', '?', ':', ';']
 
 const typingField = document.getElementById('typing-field');
 let lines = [];
@@ -63,6 +64,7 @@ function createDisplay() {
 }
 
 function createLines(wordsSet) {
+    console.log(wordsSet.length)
     if (wordsSet.length <= 0) {
         return;
     }
@@ -70,21 +72,23 @@ function createLines(wordsSet) {
     const p = document.createElement('p');
     p.id = `p${linesIndicator}`;
     typingField.append(p);
-    const currentP = document.getElementById(`p${linesIndicator}`);
+    currentP = document.getElementById(`p${linesIndicator}`);
 
     for (let i = 0, j = 1; i < wordsSet.length; i++) {
-        if (currentP.clientHeight > 30) {
-            for (; currentP.clientHeight > 30; j++) {
-                currentP.removeChild(document.getElementById(`word${linesIndicator}_${i - j}`));
-            }
-            ++linesIndicator;
-            return createLines(wordsSet.slice(i - 1), linesIndicator);
-        }
-
         let word = document.createElement('span');
         word.id = `word${linesIndicator}_${i}`;
-        word.appendChild(document.createTextNode(wordsSet[i] + ' '));
+        word.appendChild(document.createTextNode(wordsSet[i]));
         document.getElementById(`p${linesIndicator}`).append(word);
+
+        if (currentP.clientHeight > 30) {
+            do {
+                currentP.removeChild(document.getElementById(`word${linesIndicator}_${i - j}`));
+                j++;
+            } while (currentP.clientHeight > 30)
+            ++linesIndicator;
+
+            return createLines(wordsSet.slice(i));
+        }
     }
 }
 
@@ -112,9 +116,9 @@ function setWords(number, percent) {
     typingField.innerText = '';
     for (let i = 0, j = Math.floor(100 / percent), string = ''; i < number; i++) {
         if (i !== 0 && i % j === 0) {
-            string = typerSet[Math.floor(Math.random() * typerSet.length)] + ',';
+            string = typerSet[Math.floor(Math.random() * typerSet.length)] + punctuationSet[Math.floor(Math.random() * 6)] + ' ';
         }
-        else string = typerSet[Math.floor(Math.random() * typerSet.length)];
+        else string = typerSet[Math.floor(Math.random() * typerSet.length)] + ' ';
         generatedText.push(string);
     }
 
@@ -140,6 +144,18 @@ function Reset() {
     currentLine = 0;
     startingTime = 0;
     mistakes = 0;
+}
+
+function typerCursor() {
+    let cursor = document.querySelector('.typer-cursor');
+    if (lines[currentLine].length == careet) {
+        cursor.style.left = 16 + 'px';
+        cursor.style.top = ((currentLine + 1) * 30 + 20) + 'px'
+        return;
+    }
+
+    cursor.style.left = (careet * 10 + 16) + 'px';
+    cursor.style.top = (currentLine * 30 + 20) + 'px'
 }
 
 // --> main ranges functions
@@ -174,19 +190,16 @@ function released(node) {
 }
 
 function typeSymbol(symbol) {
-    if (currentLine == 0 && careet == 1) {
-        startingTime = new Date();
-    }
-
-    if (lines.length == currentLine + 1 && lines[currentLine].length - 2 == careet) {
+    if (lines.length == currentLine + 1 && lines[currentLine].length - 1 == careet) {
         calculateStats(startingTime.getTime(), mistakes);
+        document.querySelector('.typer-cursor').style.display = 'none';
         modalContainer.style.display = 'flex';
         animateModal();
     }
 
     const typingDisplay = document.getElementById('typing-display');
 
-    if (lines[currentLine].length == careet + 1) {
+    if (lines[currentLine].length == careet) {
         typingDisplay.appendChild(document.createElement('br'));
         ++currentLine;
         careet = 0;
@@ -216,6 +229,15 @@ function typeSymbol(symbol) {
     }
 
     ++careet;
+
+    if (currentLine == 0 && careet == 1) {
+        startingTime = new Date();
+        let typerCursor = document.createElement('div');
+        typerCursor.className = 'typer-cursor';
+        typingField.append(typerCursor);
+    }
+
+    typerCursor();
 }
 
 // --> functions for stats 
@@ -223,9 +245,9 @@ function calculateStats(start, mistakes) {
     const finish = new Date();
     let sum = 0;
     lines.forEach(a => {
-        console.log(a);
-        sum += a.length - 1
+        sum += a.length
     });
+    sum--;
     const speed = Math.round(sum * 10 / ((finish.getTime() - start) / 1000));
     document.getElementById('wpm').innerText = `${speed} WPM`;
 
@@ -247,48 +269,72 @@ window.addEventListener('load', () => {
 })
 
 function start() {
+    function keyDown(array, event, symbol = null) {
+        if (event.key == 'Shift' || event.key == "Control" || event.key == 'Alt') {
+            defineSide(event);
+            return;
+        }
+        for (let button of array) {
+            let list = [...button.classList];
+            for (let i = 0; i < list.length; i++) {
+                if (list[i] == event.key) {
+                    pressed(button);
+                    if (!symbol)
+                        typeSymbol(event.key);
+                    break;
+                }
+            }
+        }
+    }
+
+    function keyUp(array, event) {
+        for (let button of array) {
+            let list = [...button.classList];
+            for (let i = 0; i < list.length; i++) {
+                if (list[i] == event.key) {
+                    released(button);
+                    break;
+                }
+            }
+        }
+    }
+
+    function defineSide(event) {
+        if (event.location == 1) {
+            if (event.key == 'Shift')
+                pressed(document.getElementById('leftShift'));
+            if (event.key == 'Alt')
+                pressed(document.getElementById('leftAlt'));
+            if (event.key == 'Control')
+                pressed(document.getElementById('leftCtrl'));
+            return;
+        }
+
+        if (event.key == 'Shift')
+            pressed(document.getElementById('rightShift'));
+        if (event.key == 'Alt')
+            pressed(document.getElementById('rightAlt'));
+        if (event.key == 'Control')
+            pressed(document.getElementById('rightCtrl'));
+    }
+
     window.addEventListener('keydown', event => {
-        for (let key of keys) {
-            if (key.id == event.key) {
-                pressed(key);
-                typeSymbol(event.key);
-            }
-        }
-
-        for (let key of wideKeys) {
-            if (key.id == event.key) {
-                pressed(key);
-            }
-        }
-
-        for (let key of commandKeys) {
-            if (key.id == event.key) {
-                pressed(key);
-            }
-        }
+        event.preventDefault();
+        keyDown(keys, event);
+        keyDown(wideKeys, event, `_`);
+        keyDown(commandKeys, event, `_`);
 
         if (event.key == ' ') {
             pressed(space);
             typeSymbol(' ');
         }
     })
-    window.addEventListener('keyup', event => {
-        for (let key of keys) {
-            if (key.id == event.key) {
-                released(key);
-            }
-        }
 
-        for (let key of wideKeys) {
-            if (key.id == event.key) {
-                released(key);
-            }
-        }
-        for (let key of commandKeys) {
-            if (key.id == event.key) {
-                released(key);
-            }
-        }
+    window.addEventListener('keyup', event => {
+        event.preventDefault();
+        keyUp(keys, event);
+        keyUp(wideKeys, event);
+        keyUp(commandKeys, event);
         if (event.key == ' ')
             released(space);
     })
@@ -308,7 +354,7 @@ function animateModal() {
         else {
             pos--;
             document.querySelector('.modal-window').style.transform = `translateY(${pos * 0.2}px)`;
-            document.querySelector('.modal-window').style.opacity = `${1 - pos*0.005}`
+            document.querySelector('.modal-window').style.opacity = `${1 - pos * 0.005}`
         }
 
     }, 1);

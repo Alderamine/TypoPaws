@@ -33,12 +33,23 @@
     }
 
     .mistake {
-        background-color: red;
+        background-color: rgb(255, 82, 82);
     }
 
     .space {
         color: transparent;
     }
+}
+
+.typer-cursor {
+    position: absolute;
+    height: 21px;
+    width: 2px;
+    border-radius: 2px;
+    background-color: black;
+    top: 20px;
+    left: 26px;
+    transition: all 0.1s ease-in-out;
 }
 
 
