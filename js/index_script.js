@@ -11,6 +11,7 @@ let currentLine = 0;
 let careet = 0;
 let startingTime = 0;
 let mistakes = 0;
+let isMistake = false;
 
 const wordsBar = document.getElementById('words-bar');
 const words = document.getElementById('Words');
@@ -30,6 +31,11 @@ const modalContainer = document.getElementById('modal-container');
 let width = 0;
 let left = 0;
 
+const fonts = new Map();
+fonts.set('Inconsolata', ['20px', '10']);
+fonts.set('Roboto Mono', ['18px', '10.8']);
+fonts.set('Overpass Mono', ['18px', '11.09']);
+fonts.set('JetBrains Mono', ['18px', '10.804']);
 
 // --> event listeners for ranges
 words.addEventListener('mouseover', () => {
@@ -61,10 +67,10 @@ function createDisplay() {
     p.id = 'typing-display';
     div.append(p);
     typingField.append(div);
+    checkSettings();
 }
 
 function createLines(wordsSet) {
-    console.log(wordsSet.length)
     if (wordsSet.length <= 0) {
         return;
     }
@@ -114,12 +120,37 @@ function setWords(number, percent) {
     generatedText = [];
     typingField.innerHTML = '';
     typingField.innerText = '';
-    for (let i = 0, j = Math.floor(100 / percent), string = ''; i < number; i++) {
-        if (i !== 0 && i % j === 0) {
-            string = typerSet[Math.floor(Math.random() * typerSet.length)] + punctuationSet[Math.floor(Math.random() * 6)] + ' ';
+
+    if (!localStorage.getItem('custom-text')) {
+        for (let i = 0, j = Math.floor(100 / percent), string = ''; i < number; i++) {
+            if (i !== 0 && i % j === 0) {
+                string = typerSet[Math.floor(Math.random() * typerSet.length)] + punctuationSet[Math.floor(Math.random() * 6)] + ' ';
+            }
+            else string = typerSet[Math.floor(Math.random() * typerSet.length)] + ' ';
+            generatedText.push(string);
         }
-        else string = typerSet[Math.floor(Math.random() * typerSet.length)] + ' ';
-        generatedText.push(string);
+    }
+    else {
+        let localArray = localStorage.getItem('custom-text').split(/\s/g);
+        if (number > localArray.length) {
+            for (let i = 0, j = number; j > 0; j--, i++) {
+                if (i == localArray.length - 1)
+                    i = 0;
+                string = localArray[i] + ' ';
+                generatedText.push(string);
+            }
+        }
+        else {
+            let randomPos = 0;
+            do {
+                randomPos = Math.floor(localArray.length * Math.random());
+            } while (randomPos > localArray.length - 1 - number)
+
+            for (let i = randomPos, j = number; j > 0; j--, i++) {
+                string = localArray[i] + ' ';
+                generatedText.push(string);
+            }
+        }
     }
 
     createLines(generatedText);
@@ -154,27 +185,31 @@ function typerCursor() {
         return;
     }
 
-    cursor.style.left = (careet * 10 + 16) + 'px';
+    cursor.style.left = (careet * parseFloat(fonts.get(localStorage.getItem('font'))[1]) + 16) + 'px';
     cursor.style.top = (currentLine * 30 + 20) + 'px'
 }
 
 // --> main ranges functions
-function wordsCount() {
+function wordsCount(Words = words.value, Punctuation = punctuation.value) {
     Reset();
     resetDisplay();
-    displayWords(words.value);
-    counter(document.getElementById('words-indicator-counter'), words.value);
-    setWords(words.value, punctuation.value);
+    displayWords(Words);
+    counter(document.getElementById('words-indicator-counter'), Words);
+    setWords(Words, Punctuation);
     fillLinesArr(linesIndicator);
+    localStorage.removeItem('wordsValue');
+    localStorage.setItem('wordsValue', words.value);
 }
 
-function punctuationCount() {
+function punctuationCount(Words = words.value, Punctuation = punctuation.value) {
     Reset();
     resetDisplay();
-    displayPunctuation(punctuation.value);
-    counter(document.getElementById('punctuation-indicator-counter'), punctuation.value);
-    setWords(words.value, punctuation.value);
+    displayPunctuation(Punctuation);
+    counter(document.getElementById('punctuation-indicator-counter'), Punctuation);
+    setWords(Words, Punctuation);
     fillLinesArr(linesIndicator);
+    localStorage.removeItem('punctuationValue');
+    localStorage.setItem('punctuationValue', punctuation.value);
 }
 
 
@@ -189,7 +224,22 @@ function released(node) {
     node.style.border = '2px solid #FFEFE3 '
 }
 
+function removeFocus() {
+    document.querySelector('.keyboard').style.opacity = document.querySelector('.typer_regulators').style.opacity = document.querySelector('.ad-centralizer').style.opacity = document.querySelector('.footer').style.opacity = document.querySelector('.nav').style.opacity = 1;
+}
+
+function focus() {
+    document.querySelector('.keyboard').style.opacity = document.querySelector('.typer_regulators').style.opacity = document.querySelector('.ad-centralizer').style.opacity = document.querySelector('.footer').style.opacity = document.querySelector('.nav').style.opacity = 0;
+
+    window.addEventListener('click', () => {
+        removeFocus();
+    })
+}
+
 function typeSymbol(symbol) {
+    if (localStorage.getItem('focus') == 'on')
+        focus();
+
     if (lines.length == currentLine + 1 && lines[currentLine].length - 1 == careet) {
         calculateStats(startingTime.getTime(), mistakes);
         document.querySelector('.typer-cursor').style.display = 'none';
@@ -209,28 +259,50 @@ function typeSymbol(symbol) {
 
     if (lines[currentLine][careet] == ' ') {
         span.classList.add('space');
-        span.innerText = '5';
+        span.innerText = '_';
 
         if (lines[currentLine][careet] == symbol) {
+            if (isMistake) {
+                span.classList.remove('space');
+                span.classList.add('mistake')
+                isMistake = false;
+            }
             typingDisplay.append(span);
         } else {
             ++mistakes;
-            span.classList.add('mistake');
-            typingDisplay.append(span);
+            if (localStorage.getItem('skip-mistakes') == 'off') {
+                isMistake = true;
+                careet--;
+            } else {
+                span.classList.remove('space');
+                span.classList.add('mistake');
+                typingDisplay.append(span);
+            }
         }
+
     } else if (lines[currentLine][careet] == symbol) {
-        span.appendChild(document.createTextNode(symbol));
+        if (isMistake) {
+            span.classList.add('mistake')
+            isMistake = false;
+            span.appendChild(document.createTextNode(lines[currentLine][careet]));
+        } else
+            span.appendChild(document.createTextNode(symbol));
         typingDisplay.append(span);
     } else {
         ++mistakes;
-        span.appendChild(document.createTextNode(lines[currentLine][careet]));
-        span.classList.add('mistake');
-        typingDisplay.append(span);
+        if (localStorage.getItem('skip-mistakes') == 'off') {
+            careet--;
+            isMistake = true;
+        } else {
+            span.appendChild(document.createTextNode(lines[currentLine][careet]));
+            span.classList.add('mistake');
+            typingDisplay.append(span);
+        }
     }
 
     ++careet;
 
-    if (currentLine == 0 && careet == 1) {
+    if (currentLine == 0 && careet == 1 && !document.querySelector('.typer-cursor')) {
         startingTime = new Date();
         let typerCursor = document.createElement('div');
         typerCursor.className = 'typer-cursor';
@@ -264,7 +336,15 @@ window.addEventListener('resize', () => {
 })
 
 window.addEventListener('load', () => {
-    wordsCount();
+    const wordsValue = localStorage.getItem('wordsValue') ? localStorage.getItem('wordsValue') : 60;
+    document.getElementById('Words').setAttribute('value', wordsValue);
+
+    const punctuationValue = localStorage.getItem('punctuationValue') ? localStorage.getItem('punctuationValue') : 25;
+    document.getElementById('Punctuation').setAttribute('value', punctuationValue);
+
+    checkSettings();
+    wordsCount(wordsValue, punctuationValue);
+    punctuationCount(wordsValue, punctuationValue);
     start();
 })
 
@@ -338,6 +418,31 @@ function start() {
         if (event.key == ' ')
             released(space);
     })
+}
+
+function checkSettings() {
+    if (!localStorage.getItem('bold')) {
+        localStorage.setItem('skip-mistakes', 'on');
+        localStorage.setItem('focus', 'off');
+        localStorage.setItem('points', 'on');
+        localStorage.setItem('bold', 'off');
+        localStorage.setItem('font', 'Inconsolata')
+        localStorage.setItem('custom-text', '')
+    }
+    if (localStorage.getItem('bold') == 'on') {
+        typingField.style.fontWeight = 'bold';
+        document.querySelector('#typing-display').style.fontWeight = 'bold';
+    }
+
+    if (localStorage.getItem('points') == 'off') {
+        document.getElementById('pointsContainer').style.display = 'none';
+    } else {
+        document.getElementById('pointsContainer').style.display = 'flex';
+    }
+
+    document.getElementById('typing-display').style.fontFamily = typingField.style.fontFamily = `${localStorage.getItem('font')}, monospace`;
+
+    document.getElementById('typing-display').style.fontSize = typingField.style.fontSize = fonts.get(localStorage.getItem('font'))[0];
 }
 
 // --> modal window

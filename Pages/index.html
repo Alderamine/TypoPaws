@@ -76,7 +76,7 @@
                         <label for="Words">Word count</label>
                         <div class="range">
                             <input type="range" name="Words" class="slider" id="Words" min="20" max="100" step="10"
-                                oninput="wordsCount()" value="60">
+                                oninput="wordsCount()">
                             <div class="selector" id="selector-words">
                                 <div class="selector-indicator" id="words-indicator"></div>
                                 <div id="words-indicator-counter" class="indicator-counter">60</div>
@@ -260,7 +260,7 @@
                         <h3 class="modal-window-label">Accuracy</h3>
                         <p class="modal-window-number" id="accuracy"></p>
                     </div>
-                    <div class="modal-window-stat">
+                    <div class="modal-window-stat" id="pointsContainer">
                         <h3 class="modal-window-label">Points</h3>
                         <p class="modal-window-number" id="points"></p>
                     </div>
@@ -269,7 +269,6 @@
 
             <div class="modal-window-wrapper">
                 <div class="modal-window-section-button">
-                    <p class="modal-window-congrats">Your typing speed is higher than 50% of people</p>
                     <div class="button-wrapper">
                         <button class="modal-window-restart" id="modal-window-restart"
                             onclick="closeModal()">Restart</button>

@@ -33,24 +33,13 @@
                             <label for="language">Select language
                             </label>
                             <select name="language" id="language" class="select-pref">
-                                <option value="english(uk)" default>English(UK)</option>
-                                <option value="english(us)">English(US)</option>
-                                <option value="russian">Russian</option>
-                                <option value="ukrainian">Ukrainian</option>
+                                <option value="english" default>English</option>
                             </select>
                         </div>
                         <div class="preferences-general-preference">
                             <label for="skip-mistakes">Skip mistakes</label>
                             <input type="checkbox" name="skip-mistakes" id="skip-mistakes" class="checkbox-pref">
                             <div class="checker" id="skip-mistakes-checker"></div>
-                        </div>
-                        <div class="preferences-general-preference">
-                            <label for="quick-start">Quick start:</label>
-                            <input type="text" value="command+s" name="quick-start" id="quick-start" class="key-prep">
-                        </div>
-                        <div class="preferences-general-preference">
-                            <label for="hide-menu">Hide/show menu</label>
-                            <input type="text" name="hide-menu" value="none" class="key-prep">
                         </div>
                     </div>
 
@@ -62,12 +51,11 @@
 
                     <div class="preferences-appearance">
                         <div class="preferences-appearance-preference">
-                            <label for="font">Select language</label>
+                            <label for="font">Select font</label>
                             <select name="font" id="font" class="select-pref">
-                                <option value="inconsolata" default>Inconsolata</option>
-                                <option value="inconsolata">Inconsolata</option>
-                                <option value="inconsolata">Inconsolata</option>
-                                <option value="inconsolata">Inconsolata</option>
+                                <option value="Inconsolata" selected>Inconsolata</option>
+                                <option value="Roboto Mono">Roboto Mono</option>
+                                <option value="JetBrains Mono">JetBrains Mono</option>
                             </select>
                         </div>
                         <div class="preferences-appearance-preference">
@@ -92,14 +80,11 @@
                         <h1>Use custome text</h1>
                     </div>
                     <div class="preferences-section-par">
-                        <textarea name="custome-text" id="custome-text" class="area-prep"
-                            placeholder="Start typing here..."></textarea>
+                        <textarea name="custom-text" id="custom-text" class="area-prep" placeholder="Start typing here..." oninput="addText()"></textarea>
                     </div>
-                    <button type="submit" class="submit-button">Add</button>
+
                 </section>
-
             </article>
-
         </main>
 
         <nav class="nav">

@@ -75,7 +75,7 @@
     resize: none;
     height: 256px;
     font:var.$regular-bg;
-    border-radius: 25px;
+    border-radius: 25px 0 0 25px;
 
     &::placeholder {
         font: var.$regular;
@@ -95,4 +95,9 @@
     background-color: var.$secondary-container-color;
     font: var.$regular;
     font-size: 20px;
+
+    &:focus {
+        outline: 2px solid var.$secondary-container-color;
+    }
 }
+
