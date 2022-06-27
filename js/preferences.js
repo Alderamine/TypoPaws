@@ -1,6 +1,6 @@
 // --> preferences functions
 function animate(element, child) {
-    document.getElementById(child).style.transition = 'right 0.5s, opacity 0.5s';
+    document.getElementById(child).style.transition = 'right 0.2s, opacity 0.5s';
     let id;
     let pos = 0;
     if (document.getElementById(element).checked) {

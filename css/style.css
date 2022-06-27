@@ -49,6 +49,7 @@
   height: auto;
 }
 .logo_ad-container-ad {
+  display: none;
   margin: 0 auto;
   width: 700px;
 }
@@ -792,6 +793,14 @@
   padding: 0;
 }
 
+*::-moz-selection {
+  background-color: #FFCFAC;
+}
+
+*::selection {
+  background-color: #FFCFAC;
+}
+
 body {
   overflow-y: scroll;
 }
@@ -809,4 +818,8 @@ button:active {
   background: transparent;
   border: none;
   cursor: pointer;
+}
+
+a:focus {
+  outline: none;
 }

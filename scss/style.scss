@@ -11,6 +11,10 @@
     padding: 0;
 }
 
+*::selection {
+    background-color: #FFCFAC;
+}
+
 body {
     overflow-y: scroll;
 }
@@ -29,4 +33,8 @@ button:active {
     background: transparent;
     border: none;
     cursor: pointer;
+}
+
+a:focus {
+    outline: none;
 }
