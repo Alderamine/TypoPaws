@@ -1,0 +1,33 @@
+@use "variables" as var;
+@forward 'preferences-input';
+
+
+.preferences {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding: 0 64px;
+    font: var.$regular-bg;
+
+    &-general, &-appearance {
+        margin-top: 32px;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 32px;
+
+        &-preference {
+            position: relative;
+            width: calc(50% - 16px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 24px;
+
+            label {
+                padding-bottom: 8px;
+                border-bottom: 2px solid var.$secondary-container-color;
+            }
+        }
+    }
+}

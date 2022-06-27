@@ -1,0 +1,55 @@
+@use "variables" as var;
+
+.typing_field {
+    position: relative;
+    width: 100%;
+    border-radius: 25px;
+    padding: 16px;
+    background: var.$secondary-color;
+    font: var.$regular-bg;
+    line-height: 30px;
+    color: var.$neutral-color;
+    user-select: none;
+
+    p {
+        width: 100%;
+    }
+}
+
+.typing-display-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 25px;
+    padding: 16px;
+    font: var.$regular-bg;
+    line-height: 30px;
+    user-select: none;
+    color: black;
+
+    span {
+        width: 16px;
+        background-color: var.$secondary-color;
+    }
+
+    .mistake {
+        color: rgb(255, 82, 82);
+    }
+
+    .space {
+        color: transparent;
+    }
+}
+
+.typer-cursor {
+    position: absolute;
+    height: 21px;
+    width: 2px;
+    border-radius: 2px;
+    background-color: black;
+    top: 20px;
+    left: 26px;
+    transition: all 0.1s ease-in-out;
+}
+
+

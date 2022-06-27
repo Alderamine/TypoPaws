@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="portfolio website, type, TypoPaws, speed typing, blind typing, type faster, typing, wpm, typing speed">
+    <meta name="description" content="TypoPaws | Check your typing speed, improve your typing skills, learn blind typing">
+    <meta name="author" content="Alex Safonov">
+    <link rel="icon" href="Assets/Key logo.png">
+    <link rel="stylesheet" href="style.css">
+    <title>TypoPaws</title>
+</head>
+
+<div>
+    <div class="container">
+        <main class="main">
+            <div class="logo_ad-container">
+                <div class="logo_ad-container-logo">
+                    <img src="Assets/logo.png" alt="Logo" title="TypoPaws">
+                </div>
+                <div class="ad-centralizer">
+                    <div class="logo_ad-container-ad" id="adBox">
+                        <div class="logo_ad-container-ad-content">
+                            <div class="logo_ad-container-ad-message">
+                                <div class="logo_ad-container-ad-icon">
+                                    <img src="Assets/Cat icon 2.png" alt="Cute kitty" class="logo_ad-container-ad-icon">
+                                </div>
+                                <p class="logo_ad-container-ad-par">Check out the keyboards we recomend <img src=""
+                                        alt=""></p>
+                            </div>
+
+                            <div class="logo_ad-container-ad-templates">
+                                <div class="logo_ad-container-ad-template">
+                                    <a href="#">
+                                        <img src="Assets/Keyboard_1-removebg-preview.png" alt="Keyboard 1"
+                                            title="Keyboard 1">
+                                    </a>
+                                </div>
+                                <div class="logo_ad-container-ad-template">
+                                    <a href="#" id="hide">
+                                        <img src="Assets/Keyboard_3-removebg-preview.png" alt="Keyboard 2"
+                                            title="Keyboard 2">
+                                    </a>
+                                </div>
+                                <div class="logo_ad-container-ad-template">
+                                    <a href="#">
+                                        <img src="Assets/Keyboard_4-removebg-preview.png" alt="Keyboard 3"
+                                            title="Keyboard 3">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="logo_ad-container-ad-close">
+                                <button id="closeAd" onclick="hideAd()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                        class="bi bi-x" viewBox="0 0 16 16">
+                                        <path
+                                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="menu-container">
+                    <div class="menu-container-button"></div>
+                </div>
+            </div>
+
+            <div class="typer">
+                <div class="typer_regulators">
+                    <div class="typer_regulators-container">
+                        <label for="Words">Word count</label>
+                        <div class="range">
+                            <input type="range" name="Words" class="slider" id="Words" min="20" max="100" step="10"
+                                oninput="wordsCount()">
+                            <div class="selector" id="selector-words">
+                                <div class="selector-indicator" id="words-indicator"></div>
+                                <div id="words-indicator-counter" class="indicator-counter">60</div>
+                            </div>
+                            <div class="progress-bar" id="words-bar"></div>
+                        </div>
+                    </div>
+                    <div class="typer_regulators-container" id="punctuation-container">
+                        <label for="Punctuation">Punctuation percent</label>
+                        <div class="range">
+                            <input type="range" name="Punctuation" class="slider" id="Punctuation" min="0" max="50"
+                                step="5" oninput="punctuationCount()" value="25">
+                            <div class="selector" id="selector-punctuation">
+                                <div class="selector-indicator" id="punctuation-indicator"></div>
+                                <div id="punctuation-indicator-counter" class="indicator-counter">25</div>
+                            </div>
+                            <div class="progress-bar" id="punctuation-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="typing_field" id="typing-field">
+                    <div class="typing-display-container">
+                        <p class="typing-display" id="typing-display"></p>
+                    </div>
+                </div>
+
+                <div class="keyboard">
+                    <div class="keyboard_keyrows">
+                        <div class="keyboard_keyrows-keys ` ~">`~</div>
+                        <div class="keyboard_keyrows-keys 1 !">!</div>
+                        <div class="keyboard_keyrows-keys 2 @">@</div>
+                        <div class="keyboard_keyrows-keys 3 #">#</div>
+                        <div class="keyboard_keyrows-keys 4 $">$</div>
+                        <div class="keyboard_keyrows-keys 5 %">%</div>
+                        <div class="keyboard_keyrows-keys 6 ^">^</div>
+                        <div class="keyboard_keyrows-keys 7 &">&</div>
+                        <div class="keyboard_keyrows-keys 8 *">*</div>
+                        <div class="keyboard_keyrows-keys 9 (">(</div>
+                        <div class="keyboard_keyrows-keys 0 )">)</div>
+                        <div class="keyboard_keyrows-keys - _">-_</div>
+                        <div class="keyboard_keyrows-keys = +">=+</div>
+                        <div class="keyboard_keyrows-keys-wider Backspace"><img src="Assets/Backspace.png"
+                                alt="Backspace"></div>
+                    </div>
+                    <div class="keyboard_keyrows">
+                        <div class="keyboard_keyrows-keys-wider Tab"><img src="Assets/tab.png" alt="Tab"></div>
+                        <div class="keyboard_keyrows-keys q Q">Q</div>
+                        <div class="keyboard_keyrows-keys w W">W</div>
+                        <div class="keyboard_keyrows-keys e E">E</div>
+                        <div class="keyboard_keyrows-keys r R">R</div>
+                        <div class="keyboard_keyrows-keys t T">T</div>
+                        <div class="keyboard_keyrows-keys y Y">Y</div>
+                        <div class="keyboard_keyrows-keys u U">U</div>
+                        <div class="keyboard_keyrows-keys i I">I</div>
+                        <div class="keyboard_keyrows-keys o O">O</div>
+                        <div class="keyboard_keyrows-keys p P">P</div>
+                        <div class="keyboard_keyrows-keys [ {">[{</div>
+                        <div class="keyboard_keyrows-keys ] }">]}</div>
+                        <div class="keyboard_keyrows-keys \ |">\|</div>
+                    </div>
+
+                    <div class="keyboard_keyrows">
+                        <div class="keyboard_keyrows-keys-wider CapsLock">
+                            <img src="Assets/Capslock.png" alt="CapsLock">
+                        </div>
+                        <div class="keyboard_keyrows-keys a A">A</div>
+                        <div class="keyboard_keyrows-keys s S">S</div>
+                        <div class="keyboard_keyrows-keys d D">D</div>
+                        <div class="keyboard_keyrows-keys f F">F</div>
+                        <div class="keyboard_keyrows-keys g G">G</div>
+                        <div class="keyboard_keyrows-keys h H">H</div>
+                        <div class="keyboard_keyrows-keys j J">J</div>
+                        <div class="keyboard_keyrows-keys k K">K</div>
+                        <div class="keyboard_keyrows-keys l L">L</div>
+                        <div class="keyboard_keyrows-keys ; :">;:</div>
+                        <div class="keyboard_keyrows-keys ' &quot;">'"</div>
+                        <div class="keyboard_keyrows-keys-wider Enter">
+                            <img src="Assets/enter.png" alt="Enter">
+                        </div>
+                    </div>
+
+                    <div class="keyboard_keyrows">
+                        <div class="keyboard_keyrows-keys-wider Shift" id="leftShift"><img src="Assets/Shift.png"
+                                alt="Shift">
+                        </div>
+                        <div class="keyboard_keyrows-keys z Z">Z</div>
+                        <div class="keyboard_keyrows-keys x X">X</div>
+                        <div class="keyboard_keyrows-keys c C">C</div>
+                        <div class="keyboard_keyrows-keys v V">V</div>
+                        <div class="keyboard_keyrows-keys b B">B</div>
+                        <div class="keyboard_keyrows-keys n N">N</div>
+                        <div class="keyboard_keyrows-keys m M">M</div>
+                        <div class="keyboard_keyrows-keys , &lt;">,&lt;</div>
+                        <div class="keyboard_keyrows-keys . &gt;">.&gt;</div>
+                        <div class="keyboard_keyrows-keys /">/</div>
+                        <div class="keyboard_keyrows-keys ?">?</div>
+                        <div class="keyboard_keyrows-keys-wider Shift" id="rightShift"><img src="Assets/Shift.png"
+                                alt="Shift">
+                        </div>
+                    </div>
+                    <div class="keyboard_keyrows">
+                        <div class="keyboard_keyrows-keys-command Control" id="leftCtrl">ctrl</div>
+                        <div class="keyboard_keyrows-keys-command Command"><img src="Assets/Windows.png" alt="Windows">
+                        </div>
+                        <div class="keyboard_keyrows-keys-command Alt" id="leftAlt">alt</div>
+                        <div class="keyboard_keyrows-keys-space space">space</div>
+                        <div class="keyboard_keyrows-keys-command Alt" id="rightAlt">alt</div>
+                        <div class="keyboard_keyrows-keys-command Fn">fn</div>
+                        <div class="keyboard_keyrows-keys-command Control" id="rightCtrl">ctrl</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <nav class="nav">
+            <div class="nav_container">
+                <a href="https://typopaws.app/" class="nav_link">
+                    <img src="Assets/Keyboard icon.png" alt="Practise" class="nav_link-icon" title="Practise">
+                </a>
+                <a href="Preferences.html" class="nav_link">
+                    <img src="Assets/Gear icon.png" alt="Settings" class="nav_link-icon" title="Settings">
+                </a>
+                <a href="Info.html" class="nav_link">
+                    <img src="Assets/Info icon.png" alt="Info" class="nav_link-icon" title="Info">
+                </a>
+                <a href="https://github.com/Alderamine/TypoPaws" class="nav_link" target="_blank">
+                    <img src="Assets/github icon.svg" alt="Github" class="nav_link-icon" title="Github">
+                </a>
+            </div>
+        </nav>
+
+
+    </div>
+
+    <div class="footer">
+        <div class="footer_contact-header">
+            <p>Contact me:</p>
+        </div>
+        <div class="footer_contact">
+            <a href="">
+                <img src="Assets/ArrowDownRightCircle.png" alt="Arrow down">
+                <p>My website</p>
+            </a>
+        </div>
+        <div class="footer_contact">
+            <a href="">
+                <img src="Assets/Telegram.png" alt="Telegram">
+                <p>Telegram</p>
+            </a>
+        </div>
+        <div class="footer_contact">
+            <a href="">
+                <img src="Assets/Mailbox.png" alt="Mail">
+                <p>Mail</p>
+            </a>
+        </div>
+        <div class="footer_contact">
+            <a href="">
+                <img src="Assets/Twitter.png" alt="Twitter" style="height: auto;">
+                <p>Twitter</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="modal-container" id="modal-container">
+        <div class="modal-window">
+            <div class="modal-window-wrapper">
+                <div class="modal-window-section">
+                    <h1 class="modal-window-header">Your result</h1>
+                    <button class="modal-window-close" id="modal-window-close" onclick="closeModal()">
+                        <img src="Assets/x.svg" alt="close" class="close-img">
+                    </button>
+                </div>
+                <div class="modal-window-section">
+                    <div class="modal-window-stat">
+                        <h3 class="modal-window-label">Speed</h3>
+                        <p class="modal-window-number" id="wpm"></p>
+                    </div>
+                    <div class="modal-window-stat">
+                        <h3 class="modal-window-label">Accuracy</h3>
+                        <p class="modal-window-number" id="accuracy"></p>
+                    </div>
+                    <div class="modal-window-stat" id="pointsContainer">
+                        <h3 class="modal-window-label">Points</h3>
+                        <p class="modal-window-number" id="points"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-window-wrapper">
+                <div class="modal-window-section-button">
+                    <div class="button-wrapper">
+                        <button class="modal-window-restart" id="modal-window-restart"
+                            onclick="closeModal()">Restart</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="index_script.js"></script>
+<script src="nav_animation.js"></script>
+</body>
+
+</html>
