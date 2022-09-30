@@ -19,7 +19,6 @@ function animate(element, child) {
                 clearInterval(id);
             else {
                 pos++;
-                console.log(child)
                 document.getElementById(child).style.right = `${pos * 10}` + 'px';
             }
 
@@ -81,7 +80,6 @@ window.addEventListener('load', () => {
         if (select.options[i].hasAttribute('selected')) {
             select.options[i].removeAttribute('selected');
         }
-        console.log(select.options[i].value);
         if (select.options[i].value == localStorage.getItem('font')) {
             select.options[i].setAttribute('selected', 'selected');
         }
