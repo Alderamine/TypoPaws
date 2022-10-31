@@ -1,4 +1,4 @@
-@use 'variables' as var;
+@use "variables" as var;
 
 .keyboard {
     width: 100%;
@@ -9,19 +9,24 @@
     gap: 8px;
     padding: 16px;
     border-radius: 25px;
-    
+
     &_keyrows {
         gap: 8px;
         width: 100%;
         display: flex;
         justify-content: center;
 
-        &-keys, &-keys-command {
+        &-keys,
+        &-keys-command {
             width: 45px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         &-keys-wider {
-            width: 98px;       
+            width: 98px;
         }
 
         &-keys-command {
@@ -32,7 +37,10 @@
             width: 225px;
         }
 
-        &-keys, &-keys-wider, &-keys-command, &-keys-space {
+        &-keys,
+        &-keys-wider,
+        &-keys-command,
+        &-keys-space {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -41,9 +49,33 @@
             border-radius: 8px;
 
             img {
-                    width: 24px;
-                    height: auto;
-                }
+                width: 24px;
+                height: auto;
+            }
         }
+
+        .pressed_key {
+            background-color: #ffcfac;
+            border: none;
+        }
+    }
+
+    .secondary_key {
+        position: absolute;
+        bottom: 1.2rem;
+        color: var.$neutral-color;
+        right: 0.3rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.25rem;
+        justify-content: center;
+    }
+
+    .main_key {
+        position: absolute;
+        top: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

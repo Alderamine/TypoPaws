@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Overpass+Mono:wght@300;400;500;600;700&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Mono:wght@400;500;700&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 .nav {
   position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
-  border-left: 2px solid #FFCFAC;
+  border-left: 2px solid #ffcfac;
   padding: 0 32px;
   background-color: white;
 }
@@ -58,9 +58,9 @@
   padding: 0 16px;
   overflow: hidden;
   display: flex;
-  font: 16px "Inconsolata", monospace;
+  font: 14px "Roboto Mono", monospace;
   height: 50px;
-  background: #FFEFE3;
+  background: #ffefe3;
   justify-content: space-between;
   border-radius: 25px;
   box-shadow: 0px 14px 6px rgba(0, 0, 0, 0.01), 0px 8px 5px rgba(0, 0, 0, 0.03), 0px 4px 4px rgba(0, 0, 0, 0.04), 0px 1px 2px rgba(0, 0, 0, 0.05), 0px 0px 0px rgba(0, 0, 0, 0.05);
@@ -89,7 +89,7 @@
 }
 .logo_ad-container-ad-template {
   transform: skewX(-45deg);
-  background: #FFCFAC;
+  background: #ffcfac;
 }
 .logo_ad-container-ad-template img {
   transform: skewX(45deg);
@@ -147,7 +147,7 @@
   width: 100%;
   display: flex;
   gap: 96px;
-  font: 20px "Inconsolata", monospace;
+  font: 20px "Roboto Mono", monospace;
   font-weight: medium;
 }
 .typer_regulators-container {
@@ -175,7 +175,7 @@
   position: absolute;
   vertical-align: center;
   left: 0;
-  background-color: #FFCFAC;
+  background-color: #ffcfac;
   height: 10px;
   opacity: 0.8;
   transition: opacity 0.2s;
@@ -190,7 +190,7 @@
   -moz-appearance: none;
        appearance: none;
   height: 10px;
-  background: #FFEFE3;
+  background: #ffefe3;
   outline: none;
   opacity: 0.8;
   transition: opacity 0.2s;
@@ -217,8 +217,8 @@
   width: 25px;
   height: 25px;
   border-radius: 16px;
-  border: 6px solid #FFCFAC;
-  background: #FFEFE3;
+  border: 6px solid #ffcfac;
+  background: #ffefe3;
   pointer-events: none;
 }
 
@@ -229,7 +229,7 @@
 }
 
 #Punctuation::after, #Punctuation::before, #Words::after, #Words::before {
-  font: 16px "Inconsolata", monospace;
+  font: 14px "Roboto Mono", monospace;
   font-size: 18px;
   position: absolute;
   top: 0;
@@ -279,8 +279,8 @@
   width: 100%;
   border-radius: 25px;
   padding: 16px;
-  background: #FFEFE3;
-  font: 20px "Inconsolata", monospace;
+  background: #ffefe3;
+  font: 20px "Roboto Mono", monospace;
   line-height: 30px;
   color: #c4c4c4;
   -webkit-user-select: none;
@@ -298,7 +298,7 @@
   top: 0;
   border-radius: 25px;
   padding: 16px;
-  font: 20px "Inconsolata", monospace;
+  font: 20px "Roboto Mono", monospace;
   line-height: 30px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -308,7 +308,7 @@
 }
 .typing-display-container span {
   width: 16px;
-  background-color: #FFEFE3;
+  background-color: #ffefe3;
 }
 .typing-display-container .mistake {
   color: rgb(255, 82, 82);
@@ -339,7 +339,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  font: 24px "Inconsolata", monospace;
+  font: 20px "Roboto Mono", monospace;
   gap: 8px;
   padding: 16px;
   border-radius: 25px;
@@ -352,12 +352,16 @@
 }
 .keyboard_keyrows-keys, .keyboard_keyrows-keys-command {
   width: 45px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .keyboard_keyrows-keys-wider {
   width: 98px;
 }
 .keyboard_keyrows-keys-command {
-  font: 16px "Inconsolata", monospace;
+  font: 14px "Roboto Mono", monospace;
 }
 .keyboard_keyrows-keys-space {
   width: 225px;
@@ -367,12 +371,33 @@
   justify-content: center;
   align-items: center;
   height: 45px;
-  border: 2px solid #FFEFE3;
+  border: 2px solid #ffefe3;
   border-radius: 8px;
 }
 .keyboard_keyrows-keys img, .keyboard_keyrows-keys-wider img, .keyboard_keyrows-keys-command img, .keyboard_keyrows-keys-space img {
   width: 24px;
   height: auto;
+}
+.keyboard_keyrows .pressed_key {
+  background-color: #ffcfac;
+  border: none;
+}
+.keyboard .secondary_key {
+  position: absolute;
+  bottom: 1.2rem;
+  color: #c4c4c4;
+  right: 0.3rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  justify-content: center;
+}
+.keyboard .main_key {
+  position: absolute;
+  top: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main {
@@ -390,9 +415,9 @@
   bottom: 0;
   width: 100%;
   display: flex;
-  font: 16px "Inconsolata", monospace;
+  font: 14px "Roboto Mono", monospace;
   font-size: 14px;
-  border-top: 2px solid #FFCFAC;
+  border-top: 2px solid #ffcfac;
   padding: 8px;
   background-color: #fff;
   gap: 16px;
@@ -418,7 +443,7 @@
   right: 0;
   width: 100vw;
   height: 100vh;
-  font: 16px "Inconsolata", monospace;
+  font: 14px "Roboto Mono", monospace;
   display: none;
   justify-content: center;
   align-items: center;
@@ -427,11 +452,13 @@
 .modal-window {
   border-radius: 25px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  background-color: #FFEFE3;
+  background-color: #ffefe3;
   padding: 16px;
   width: 500px;
+  max-height: 500px;
+  overflow: auto;
   display: flex;
   gap: 32px;
   position: relative;
@@ -452,7 +479,7 @@
   width: 100%;
   font-weight: 400;
   text-align: center;
-  border-bottom: 1px solid #FFCFAC;
+  border-bottom: 1px solid #ffcfac;
 }
 .modal-window-stat {
   flex-grow: 1;
@@ -495,9 +522,9 @@
 }
 .modal-window-restart {
   display: inline;
-  background-color: #FFCFAC;
+  background-color: #ffcfac;
   padding: 8px 24px;
-  font: 16px "Inconsolata", monospace;
+  font: 14px "Roboto Mono", monospace;
   border-radius: 16px;
 }
 .modal-window-section-button {
@@ -512,6 +539,29 @@
   text-align: center;
 }
 
+.modal_header--padding_top {
+  padding-top: 3rem;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.stats h3 {
+  font: 14px "Roboto Mono", monospace;
+  padding-bottom: 0.5rem;
+  color: #c4c4c4;
+  font-weight: bold;
+}
+.stats canvas {
+  width: 100%;
+  background-color: #fff8f2;
+  height: 10rem;
+  border-radius: 1rem;
+}
+
 .container {
   position: relative;
   display: flex;
@@ -523,11 +573,11 @@
 }
 
 .section-header {
-  font: 16px "Inconsolata", monospace;
+  font: 14px "Roboto Mono", monospace;
   display: inline;
   padding: 16px 24px;
   border-radius: 16px;
-  background-color: #FFEFE3;
+  background-color: #ffefe3;
 }
 .section-header h1 {
   display: inline;
@@ -550,7 +600,7 @@
   flex-direction: column;
   gap: 64px;
   padding-left: 64px;
-  font: 20px "Inconsolata", monospace;
+  font: 20px "Roboto Mono", monospace;
 }
 .about-section-par {
   margin-top: 24px;
@@ -565,7 +615,7 @@
 .about-section-resources a {
   border-radius: 16px;
   padding: 8px 16px;
-  background-color: #FFCFAC;
+  background-color: #ffcfac;
   gap: 8px;
   justify-content: center;
   display: flex;
@@ -580,14 +630,14 @@
 }
 
 .select-pref {
-  font: 20px "Inconsolata", monospace;
+  font: 20px "Roboto Mono", monospace;
   background-color: none;
   border: none;
   padding: 8px;
 }
 .select-pref:focus {
   border-radius: 8px;
-  outline: 2px solid #FFCFAC;
+  outline: 2px solid #ffcfac;
 }
 .select-pref:hover {
   cursor: pointer;
@@ -599,14 +649,14 @@
           appearance: none;
   height: 50px;
   width: 100px;
-  background-color: #FFEFE3;
+  background-color: #ffefe3;
   opacity: 0.9;
   transition: opacity 0.5s;
   border-radius: 8px;
 }
 .checkbox-pref:focus {
   border-radius: 8px;
-  outline: 2px solid #FFCFAC;
+  outline: 2px solid #ffcfac;
 }
 .checkbox-pref:hover {
   cursor: pointer;
@@ -621,7 +671,7 @@
   width: 50px;
   opacity: 0.9;
   transition: right 0.5s, opacity 0.5s;
-  background-color: #FFCFAC;
+  background-color: #ffcfac;
   pointer-events: none;
 }
 
@@ -631,8 +681,8 @@
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  font: 20px "Inconsolata", monospace;
-  background-color: #FFCFAC;
+  font: 20px "Roboto Mono", monospace;
+  background-color: #ffcfac;
   padding: 8px;
   border-radius: 8px;
   border: none;
@@ -647,7 +697,7 @@
   padding: 16px;
   border: none;
   outline: none;
-  background-color: #FFEFE3;
+  background-color: #ffefe3;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -656,20 +706,20 @@
   min-width: 100%;
   resize: none;
   height: 256px;
-  font: 20px "Inconsolata", monospace;
+  font: 20px "Roboto Mono", monospace;
   border-radius: 25px 0 0 25px;
 }
 .area-prep::-moz-placeholder {
-  font: 16px "Inconsolata", monospace;
+  font: 14px "Roboto Mono", monospace;
 }
 .area-prep:-ms-input-placeholder {
-  font: 16px "Inconsolata", monospace;
+  font: 14px "Roboto Mono", monospace;
 }
 .area-prep::placeholder {
-  font: 16px "Inconsolata", monospace;
+  font: 14px "Roboto Mono", monospace;
 }
 .area-prep:focus {
-  outline: 2px solid #FFCFAC;
+  outline: 2px solid #ffcfac;
 }
 
 .submit-button {
@@ -677,12 +727,12 @@
   float: right;
   padding: 8px 16px;
   border-radius: 8px;
-  background-color: #FFCFAC;
-  font: 16px "Inconsolata", monospace;
+  background-color: #ffcfac;
+  font: 14px "Roboto Mono", monospace;
   font-size: 20px;
 }
 .submit-button:focus {
-  outline: 2px solid #FFCFAC;
+  outline: 2px solid #ffcfac;
 }
 
 .preferences {
@@ -690,7 +740,7 @@
   flex-direction: column;
   gap: 64px;
   padding: 0 64px;
-  font: 20px "Inconsolata", monospace;
+  font: 20px "Roboto Mono", monospace;
 }
 .preferences-general, .preferences-appearance {
   margin-top: 32px;
@@ -709,7 +759,7 @@
 }
 .preferences-general-preference label, .preferences-appearance-preference label {
   padding-bottom: 8px;
-  border-bottom: 2px solid #FFCFAC;
+  border-bottom: 2px solid #ffcfac;
 }
 
 @media (max-width: 556px) {

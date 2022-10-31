@@ -1,3 +1,5 @@
+import { checkSettings } from "./index_script.js";
+
 // --> preferences functions
 function animate(element, child) {
   document.getElementById(child).style.transition = "right 0.2s, opacity 0.5s";
@@ -64,6 +66,7 @@ document.getElementById("points").addEventListener("click", () => {
 document.getElementById("font").addEventListener("change", (e) => {
   localStorage.removeItem("font");
   localStorage.setItem("font", e.target.value);
+  checkSettings();
 });
 
 // --> window events

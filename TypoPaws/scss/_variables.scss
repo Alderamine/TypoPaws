@@ -1,15 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Overpass+Mono:wght@300;400;500;600;700&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Mono:wght@400;500;700&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 //colors
 $primary-color: #fff;
-$secondary-color: #FFEFE3;
-$secondary-container-color: #FFCFAC;
+$secondary-color: #ffefe3;
+$secondary-container-color: #ffcfac;
 $text-color: black;
 $neutral-color: #c4c4c4;
 
 //fonts
 
-$regular: 16px 'Inconsolata', monospace;
-$regular-bg: 20px 'Inconsolata', monospace;
-$header-sm: 24px 'Inconsolata', monospace;
-$header-bg: 40px 'Inconsolata', monospace;
+$regular: 14px "Roboto Mono", monospace;
+$regular-bg: 20px "Roboto Mono", monospace;
+$header-sm: 20px "Roboto Mono", monospace;
+$header-bg: 40px "Roboto Mono", monospace;
+
+// body {
+//     color: #ffad73;
+// }

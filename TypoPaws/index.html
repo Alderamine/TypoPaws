@@ -1,284 +1,982 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>TypoPaws</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description"
-        content="TypoPaws - Check your typing speed, improve your typing skills, learn blind typing">
-    <meta name="keywords"
-        content="portfolio website, type, TypoPaws, speed typing, blind typing, type faster, typing, wpm, typing speed">
-    <meta name="author" content="Alex Safonov">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="TypoPaws - Check your typing speed, improve your typing skills, learn blind typing"
+    />
+    <meta
+      name="keywords"
+      content="portfolio website, type, TypoPaws, speed typing, blind typing, type faster, typing, wpm, typing speed"
+    />
+    <meta name="author" content="Alex Safonov" />
 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png" />
+    <link
+      rel="shortcut icon"
+      href="./favicons_browserConfigs/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="./favicons_browserConfigs/apple-touch-icon.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./favicons_browserConfigs/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./favicons_browserConfigs/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./favicons_browserConfigs/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./favicons_browserConfigs/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./favicons_browserConfigs/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./favicons_browserConfigs/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./favicons_browserConfigs/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicons_browserConfigs/apple-touch-icon-180x180.png"
+    />
 
-    <link rel="icon" type="image/png" sizes="192x192" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./favicons_browserConfigs//apple-touch-icon.png"
+    />
+    <link rel="manifest" href="./favicons_browserConfigs//site.webmanifest" />
 
-
-    <meta name="apple-mobile-web-app-title" content="TypoPaws">
-    <meta name="application-name" content="TypoPaws">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff9f83">
-    <meta name="msapplication-TileColor" content="#ff9f83">
-    <meta name="theme-color" content="#ffeee2">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="TypoPaws" />
+    <meta name="application-name" content="TypoPaws" />
+    <link
+      rel="mask-icon"
+      href="./favicons_browserConfigs//safari-pinned-tab.svg"
+      color="#ff9f83"
+    />
+    <meta name="msapplication-TileColor" content="#ff9f83" />
+    <meta name="theme-color" content="#ffeee2" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="website" />
 
-    <meta property="og:url" content="https://typopaws.app/">
-    <meta property="og:title" content="TypoPaws">
-    <meta property="og:description"
-        content="TypoPaws - Check your typing speed, improve your typing skills, learn blind typing">
+    <meta property="og:url" content="https://typopaws.app/" />
+    <meta property="og:title" content="TypoPaws" />
+    <meta
+      property="og:description"
+      content="TypoPaws - Check your typing speed, improve your typing skills, learn blind typing"
+    />
 
-    <meta property="og:image" itemprop="image" content="https://typopaws.app/">
-    <meta property="og:image:secure_url" itemprop="image" content="https://typopaws.app/">
+    <meta
+      property="og:image"
+      itemprop="image"
+      content="https://typopaws.app/"
+    />
+    <meta
+      property="og:image:secure_url"
+      itemprop="image"
+      content="https://typopaws.app/"
+    />
 
-
-    <meta property="og:site_name" content="TypoPaws">
+    <meta property="og:site_name" content="TypoPaws" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://typopaws.app/">
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://typopaws.app/" />
 
-    <meta property="twitter:title" content="TypoPaws">
-    <meta property="twitter:description"
-        content="TypoPaws - Check your typing speed, improve your typing skills, learn blind typing">
-    <meta property="twitter:image" content="/apple-touch-icon.png">
+    <meta property="twitter:title" content="TypoPaws" />
+    <meta
+      property="twitter:description"
+      content="TypoPaws - Check your typing speed, improve your typing skills, learn blind typing"
+    />
+    <meta property="twitter:image" content="/apple-touch-icon.png" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
+    <link rel="shortcut icon" href="Assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-    <link rel="shortcut icon" href="Assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<div>
-    <div class="container">
-        <main class="main">
+  <body>
+    <div>
+      <div class="container">
+        <div style="width: 100%">
+          <div class="main tab" id="typer_window">
             <div class="logo_ad-container">
-                <div class="logo_ad-container-logo">
-                    <img src="Assets/logo.png" alt="Logo" title="TypoPaws">
-                </div>
+              <div class="logo_ad-container-logo">
+                <img src="Assets/logo.png" alt="Logo" title="TypoPaws" />
+              </div>
 
-                <div class="menu-container">
-                    <div class="menu-container-button"></div>
-                </div>
+              <div class="menu-container">
+                <div class="menu-container-button"></div>
+              </div>
             </div>
 
             <div class="typer">
-                <div class="typer_regulators">
-                    <div class="typer_regulators-container">
-                        <label for="Words">Word count</label>
-                        <div class="range">
-                            <input type="range" name="Words" class="slider" id="Words" min="20" max="100" step="10"
-                                oninput="wordsCount()">
-                            <div class="selector" id="selector-words">
-                                <div class="selector-indicator" id="words-indicator"></div>
-                                <div id="words-indicator-counter" class="indicator-counter">60</div>
-                            </div>
-                            <div class="progress-bar" id="words-bar"></div>
-                        </div>
+              <div class="typer_regulators">
+                <div class="typer_regulators-container">
+                  <label for="Words" class="lang__word_count">Word count</label>
+                  <div class="range">
+                    <input
+                      type="range"
+                      name="Words"
+                      class="slider"
+                      id="Words"
+                      min="20"
+                      max="100"
+                      step="10"
+                    />
+                    <div class="selector" id="selector-words">
+                      <div
+                        class="selector-indicator"
+                        id="words-indicator"
+                      ></div>
+                      <div
+                        id="words-indicator-counter"
+                        class="indicator-counter"
+                      >
+                        60
+                      </div>
                     </div>
-                    <div class="typer_regulators-container" id="punctuation-container">
-                        <label for="Punctuation">Punctuation percent</label>
-                        <div class="range">
-                            <input type="range" name="Punctuation" class="slider" id="Punctuation" min="0" max="50"
-                                step="5" oninput="punctuationCount()" value="25">
-                            <div class="selector" id="selector-punctuation">
-                                <div class="selector-indicator" id="punctuation-indicator"></div>
-                                <div id="punctuation-indicator-counter" class="indicator-counter">25</div>
-                            </div>
-                            <div class="progress-bar" id="punctuation-bar"></div>
-                        </div>
+                    <div class="progress-bar" id="words-bar"></div>
+                  </div>
+                </div>
+                <div
+                  class="typer_regulators-container"
+                  id="punctuation-container"
+                >
+                  <label for="Punctuation" class="lang__punct_percent"
+                    >Punctuation percent</label
+                  >
+                  <div class="range">
+                    <input
+                      type="range"
+                      name="Punctuation"
+                      class="slider"
+                      id="Punctuation"
+                      min="0"
+                      max="50"
+                      step="5"
+                      value="25"
+                    />
+                    <div class="selector" id="selector-punctuation">
+                      <div
+                        class="selector-indicator"
+                        id="punctuation-indicator"
+                      ></div>
+                      <div
+                        id="punctuation-indicator-counter"
+                        class="indicator-counter"
+                      >
+                        25
+                      </div>
                     </div>
+                    <div class="progress-bar" id="punctuation-bar"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="typing_field" id="typing-field">
+                <div class="typing-display-container">
+                  <p class="typing-display" id="typing-display"></p>
+                </div>
+              </div>
+
+              <div class="keyboard" id="en_keyboard">
+                <div class="keyboard_keyrows">
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">~</span>
+                    <span class="main_key">`</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">!</span>
+                    <span class="main_key">1</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">@</span>
+                    <span class="main_key">2</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">#</span>
+                    <span class="main_key">3</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">$</span>
+                    <span class="main_key">4</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">%</span>
+                    <span class="main_key">5</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">^</span>
+                    <span class="main_key">6</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">&</span>
+                    <span class="main_key">7</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">*</span>
+                    <span class="main_key">8</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">(</span>
+                    <span class="main_key">9</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">)</span>
+                    <span class="main_key">0</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">_</span>
+                    <span class="main_key">-</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">+</span>
+                    <span class="main_key">=</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys-wider Backspace">
+                    <img src="Assets/Backspace.png" alt="Backspace" />
+                  </div>
+                </div>
+                <div class="keyboard_keyrows">
+                  <div class="keyboard_keyrows-keys-wider Tab">
+                    <img src="Assets/tab.png" alt="Tab" />
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Q</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">W</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">E</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">R</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">T</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Y</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">U</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">I</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">O</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">P</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">{</span>
+                    <span class="main_key">[</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">}</span>
+                    <span class="main_key">]</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">|</span>
+                    <span class="main_key">\</span>
+                  </div>
                 </div>
 
-                <div class="typing_field" id="typing-field">
-                    <div class="typing-display-container">
-                        <p class="typing-display" id="typing-display"></p>
-                    </div>
+                <div class="keyboard_keyrows">
+                  <div class="keyboard_keyrows-keys-wider CapsLock">
+                    <img src="Assets/Capslock.png" alt="CapsLock" />
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">A</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">S</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">D</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">F</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">G</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">H</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">J</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">K</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">L</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">; </span>
+                    <span class="secondary_key">:</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">"</span>
+                    <span class="main_key">'</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys-wider Enter">
+                    <img src="Assets/enter.png" alt="Enter" />
+                  </div>
                 </div>
 
-                <div class="keyboard">
-                    <div class="keyboard_keyrows">
-                        <div class="keyboard_keyrows-keys ` ~">`~</div>
-                        <div class="keyboard_keyrows-keys 1 !">!</div>
-                        <div class="keyboard_keyrows-keys 2 @">@</div>
-                        <div class="keyboard_keyrows-keys 3 #">#</div>
-                        <div class="keyboard_keyrows-keys 4 $">$</div>
-                        <div class="keyboard_keyrows-keys 5 %">%</div>
-                        <div class="keyboard_keyrows-keys 6 ^">^</div>
-                        <div class="keyboard_keyrows-keys 7 &">&</div>
-                        <div class="keyboard_keyrows-keys 8 *">*</div>
-                        <div class="keyboard_keyrows-keys 9 (">(</div>
-                        <div class="keyboard_keyrows-keys 0 )">)</div>
-                        <div class="keyboard_keyrows-keys - _">-_</div>
-                        <div class="keyboard_keyrows-keys = +">=+</div>
-                        <div class="keyboard_keyrows-keys-wider Backspace"><img src="Assets/Backspace.png"
-                                alt="Backspace"></div>
-                    </div>
-                    <div class="keyboard_keyrows">
-                        <div class="keyboard_keyrows-keys-wider Tab"><img src="Assets/tab.png" alt="Tab"></div>
-                        <div class="keyboard_keyrows-keys q Q">Q</div>
-                        <div class="keyboard_keyrows-keys w W">W</div>
-                        <div class="keyboard_keyrows-keys e E">E</div>
-                        <div class="keyboard_keyrows-keys r R">R</div>
-                        <div class="keyboard_keyrows-keys t T">T</div>
-                        <div class="keyboard_keyrows-keys y Y">Y</div>
-                        <div class="keyboard_keyrows-keys u U">U</div>
-                        <div class="keyboard_keyrows-keys i I">I</div>
-                        <div class="keyboard_keyrows-keys o O">O</div>
-                        <div class="keyboard_keyrows-keys p P">P</div>
-                        <div class="keyboard_keyrows-keys [ {">[{</div>
-                        <div class="keyboard_keyrows-keys ] }">]}</div>
-                        <div class="keyboard_keyrows-keys \ |">\|</div>
-                    </div>
-
-                    <div class="keyboard_keyrows">
-                        <div class="keyboard_keyrows-keys-wider CapsLock">
-                            <img src="Assets/Capslock.png" alt="CapsLock">
-                        </div>
-                        <div class="keyboard_keyrows-keys a A">A</div>
-                        <div class="keyboard_keyrows-keys s S">S</div>
-                        <div class="keyboard_keyrows-keys d D">D</div>
-                        <div class="keyboard_keyrows-keys f F">F</div>
-                        <div class="keyboard_keyrows-keys g G">G</div>
-                        <div class="keyboard_keyrows-keys h H">H</div>
-                        <div class="keyboard_keyrows-keys j J">J</div>
-                        <div class="keyboard_keyrows-keys k K">K</div>
-                        <div class="keyboard_keyrows-keys l L">L</div>
-                        <div class="keyboard_keyrows-keys ; :">;:</div>
-                        <div class="keyboard_keyrows-keys ' &quot;">'"</div>
-                        <div class="keyboard_keyrows-keys-wider Enter">
-                            <img src="Assets/enter.png" alt="Enter">
-                        </div>
-                    </div>
-
-                    <div class="keyboard_keyrows">
-                        <div class="keyboard_keyrows-keys-wider Shift" id="leftShift"><img src="Assets/Shift.png"
-                                alt="Shift">
-                        </div>
-                        <div class="keyboard_keyrows-keys z Z">Z</div>
-                        <div class="keyboard_keyrows-keys x X">X</div>
-                        <div class="keyboard_keyrows-keys c C">C</div>
-                        <div class="keyboard_keyrows-keys v V">V</div>
-                        <div class="keyboard_keyrows-keys b B">B</div>
-                        <div class="keyboard_keyrows-keys n N">N</div>
-                        <div class="keyboard_keyrows-keys m M">M</div>
-                        <div class="keyboard_keyrows-keys , &lt;">,&lt;</div>
-                        <div class="keyboard_keyrows-keys . &gt;">.&gt;</div>
-                        <div class="keyboard_keyrows-keys /">/</div>
-                        <div class="keyboard_keyrows-keys ?">?</div>
-                        <div class="keyboard_keyrows-keys-wider Shift" id="rightShift"><img src="Assets/Shift.png"
-                                alt="Shift">
-                        </div>
-                    </div>
-                    <div class="keyboard_keyrows">
-                        <div class="keyboard_keyrows-keys-command Control" id="leftCtrl">ctrl</div>
-                        <div class="keyboard_keyrows-keys-command Command"><img src="Assets/Windows.png" alt="Windows">
-                        </div>
-                        <div class="keyboard_keyrows-keys-command Alt" id="leftAlt">alt</div>
-                        <div class="keyboard_keyrows-keys-space space">space</div>
-                        <div class="keyboard_keyrows-keys-command Alt" id="rightAlt">alt</div>
-                        <div class="keyboard_keyrows-keys-command Fn">fn</div>
-                        <div class="keyboard_keyrows-keys-command Control" id="rightCtrl">ctrl</div>
-                    </div>
+                <div class="keyboard_keyrows">
+                  <div class="keyboard_keyrows-keys-wider Shift" id="leftShift">
+                    <img src="Assets/Shift.png" alt="Shift" />
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Z</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">X</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">C</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">V</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">B</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">N</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">M</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">&lt;</span>
+                    <span class="main_key">,</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">&gt;</span>
+                    <span class="main_key">.</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">?</span>
+                    <span class="main_key">/</span>
+                  </div>
+                  <div
+                    class="keyboard_keyrows-keys-wider Shift"
+                    id="rightShift"
+                  >
+                    <img src="Assets/Shift.png" alt="Shift" />
+                  </div>
                 </div>
 
+                <div class="keyboard_keyrows">
+                  <div
+                    class="keyboard_keyrows-keys-command Control"
+                    id="leftCtrl"
+                  >
+                    Ctrl
+                  </div>
+                  <div class="keyboard_keyrows-keys-command Command">
+                    <img src="Assets/Windows.png" alt="Windows" />
+                  </div>
+                  <div class="keyboard_keyrows-keys-command Alt" id="leftAlt">
+                    alt
+                  </div>
+                  <div class="keyboard_keyrows-keys-space space">space</div>
+                  <div class="keyboard_keyrows-keys-command Alt" id="rightAlt">
+                    alt
+                  </div>
+                  <div class="keyboard_keyrows-keys-command Fn">fn</div>
+                  <div
+                    class="keyboard_keyrows-keys-command Control"
+                    id="rightCtrl"
+                  >
+                    ctrl
+                  </div>
+                </div>
+              </div>
+
+              <div class="keyboard" id="ua_keyboard" style="display: none">
+                <div class="keyboard_keyrows">
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">$</span>
+                    <span class="main_key">'</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">!</span>
+                    <span class="main_key">1</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">"</span>
+                    <span class="main_key">2</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">№</span>
+                    <span class="main_key">3</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">$</span>
+                    <span class="main_key">4</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">%</span>
+                    <span class="main_key">5</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">:</span>
+                    <span class="main_key">6</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">?</span>
+                    <span class="main_key">7</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">*</span>
+                    <span class="main_key">8</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">(</span>
+                    <span class="main_key">9</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">)</span>
+                    <span class="main_key">0</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">_</span>
+                    <span class="main_key">-</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">+</span>
+                    <span class="main_key">=</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys-wider Backspace">
+                    <img src="Assets/Backspace.png" alt="Backspace" />
+                  </div>
+                </div>
+                <div class="keyboard_keyrows">
+                  <div class="keyboard_keyrows-keys-wider Tab">
+                    <img src="Assets/tab.png" alt="Tab" />
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Й</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Ц</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">У</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">К</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Е</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Н</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">Ґ</span>
+                    <span class="main_key">Г</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Ш</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Щ</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">З</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Х</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Ї</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">/</span>
+                    <span class="main_key">\</span>
+                  </div>
+                </div>
+
+                <div class="keyboard_keyrows">
+                  <div class="keyboard_keyrows-keys-wider CapsLock">
+                    <img src="Assets/Capslock.png" alt="CapsLock" />
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Ф</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">І</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">В</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">А</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">П</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Р</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">О</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Л</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Д</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Ж</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Є</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys-wider Enter">
+                    <img src="Assets/enter.png" alt="Enter" />
+                  </div>
+                </div>
+
+                <div class="keyboard_keyrows">
+                  <div class="keyboard_keyrows-keys-wider Shift" id="leftShift">
+                    <img src="Assets/Shift.png" alt="Shift" />
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Я</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Ч</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">С</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">М</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">И</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Т</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="main_key">Ь</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">&lt;</span>
+                    <span class="main_key">Б</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">&gt;</span>
+                    <span class="main_key">Ю</span>
+                  </div>
+                  <div class="keyboard_keyrows-keys">
+                    <span class="secondary_key">,</span>
+                    <span class="main_key">.</span>
+                  </div>
+                  <div
+                    class="keyboard_keyrows-keys-wider Shift"
+                    id="rightShift"
+                  >
+                    <img src="Assets/Shift.png" alt="Shift" />
+                  </div>
+                </div>
+
+                <div class="keyboard_keyrows">
+                  <div
+                    class="keyboard_keyrows-keys-command Control"
+                    id="leftCtrl"
+                  >
+                    Ctrl
+                  </div>
+                  <div class="keyboard_keyrows-keys-command Command">
+                    <img src="Assets/Windows.png" alt="Windows" />
+                  </div>
+                  <div class="keyboard_keyrows-keys-command Alt" id="leftAlt">
+                    alt
+                  </div>
+                  <div class="keyboard_keyrows-keys-space space">space</div>
+                  <div class="keyboard_keyrows-keys-command Alt" id="rightAlt">
+                    alt
+                  </div>
+                  <div class="keyboard_keyrows-keys-command Fn">fn</div>
+                  <div
+                    class="keyboard_keyrows-keys-command Control"
+                    id="rightCtrl"
+                  >
+                    ctrl
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-main tab" id="info_window" style="display: none">
+            <div class="logo_ad-container">
+              <div class="logo_ad-container-logo">
+                <img src="Assets/logo.png" alt="Logo" title="TypoPaws" />
+              </div>
+
+              <div class="menu-container">
+                <div class="menu-container-button"></div>
+              </div>
+            </div>
+            <article class="about">
+              <section class="about-section">
+                <div class="section-header">
+                  <h1 class="lang__about">About</h1>
+                </div>
+                <div class="about-section-par">
+                  <p class="lang__about_par">
+                    TypoPaws is an online tool to help you improve or just check
+                    your typing skills. Its main purpose is to give you a start
+                    in your typing journey with the ability to track your
+                    performance after each try. TypoPaws is completely free and
+                    without ads, allowing you to focus more on typing.
+                  </p>
+                </div>
+              </section>
+              <section class="about-section">
+                <div class="section-header">
+                  <h1 class="lang__type_faster">Want to type faster</h1>
+                </div>
+
+                <div class="about-section-par">
+                  <p class="lang__type_fater_par">
+                    Practice typing as much as you can. Type a lot and practice
+                    typing tests. Improve your words per minute typing results,
+                    and test your typing speed often. Remember, that your typing
+                    speed mostly relies on the muscle memory of your fingers.
+                    That’s why it’s highly important to practice a lot. If you
+                    are a busy person, It’s a good begginer strategy to take
+                    typing breaks, meaning type at least 10 minutes every
+                    30-60minutes of work.
+                  </p>
+                </div>
+              </section>
+              <section class="about-section">
+                <div class="section-header">
+                  <h1 class="lang__res">Useful resources</h1>
+                </div>
+                <div class="about-section-par">
+                  <p class="lang__res_par">
+                    There are plenty of useful resources and tools for everyone
+                    interested in fast typing. The following sites are my
+                    personal recomendation
+                  </p>
+                </div>
+                <div class="about-section-resources">
+                  <a href="https://monkeytype.com/" target="_blank">
+                    <p>monkeytype.com</p>
+                    <img src="Assets/ArrowDownRightCircle.png" alt="go to" />
+                  </a>
+                  <a href="https://www.keybr.com/" target="_blank">
+                    <p>keybr.com</p>
+                    <img src="Assets/ArrowDownRightCircle.png" alt="go to" />
+                  </a>
+                </div>
+              </section>
+            </article>
+          </div>
+
+          <div class="main tab" id="settings_window" style="display: none">
+            <div class="logo_ad-container">
+              <div class="logo_ad-container-logo">
+                <img src="Assets/logo.png" alt="Logo" title="TypoPaws" />
+              </div>
+
+              <div class="menu-container">
+                <div class="menu-container-button"></div>
+              </div>
             </div>
 
-        </main>
+            <article class="preferences">
+              <section class="preferences-section">
+                <div class="section-header">
+                  <h1 class="lang__general">General</h1>
+                </div>
+                <div class="preferences-general">
+                  <div class="preferences-general-preference">
+                    <label for="language" class="lang__select_lang"
+                      >Select language
+                    </label>
+                    <select name="language" id="language" class="select-pref">
+                      <option value="EN" default>English</option>
+                      <option value="UA">Українська</option>
+                    </select>
+                  </div>
+                  <div class="preferences-general-preference">
+                    <label for="skip-mistakes" class="lang__skip_mistakes"
+                      >Skip mistakes</label
+                    >
+                    <input
+                      type="checkbox"
+                      name="skip-mistakes"
+                      id="skip-mistakes"
+                      class="checkbox-pref"
+                    />
+                    <div class="checker" id="skip-mistakes-checker"></div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="preferences-section">
+                <div class="section-header">
+                  <h1 class="lang__apperance">Appearance</h1>
+                </div>
+
+                <div class="preferences-appearance">
+                  <div class="preferences-appearance-preference">
+                    <label for="font" class="lang__font">Select font</label>
+                    <select name="font" id="font" class="select-pref">
+                      <option value="Roboto Mono" selected>Roboto Mono</option>
+                      <option value="Anonymous Pro">Anonymous Pro</option>
+                      <option value="Fira Mono">Fira Mono</option>
+                      <option value="Ubuntu Mono">Ubuntu Mono</option>
+                    </select>
+                  </div>
+                  <div class="preferences-appearance-preference">
+                    <label for="bold" class="lang__bold">Make text bold</label>
+                    <input
+                      type="checkbox"
+                      name="bold"
+                      id="bold"
+                      class="checkbox-pref"
+                    />
+                    <div class="checker" id="bold-checker"></div>
+                  </div>
+                  <div class="preferences-appearance-preference">
+                    <label for="focus" class="lang__focus">Focus mode</label>
+                    <input
+                      type="checkbox"
+                      name="focus"
+                      id="focus"
+                      class="checkbox-pref"
+                    />
+                    <div class="checker" id="focus-checker"></div>
+                  </div>
+                  <div class="preferences-appearance-preference">
+                    <label for="points" class="lang__points"
+                      >Display points</label
+                    >
+                    <input
+                      type="checkbox"
+                      name="points"
+                      id="points"
+                      class="checkbox-pref"
+                    />
+                    <div class="checker" id="points-checker"></div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="preferences-section">
+                <div class="section-header">
+                  <h1 class="lang__custom_text">Use custom text</h1>
+                </div>
+                <div class="preferences-section-par">
+                  <textarea
+                    name="custom-text"
+                    id="custom-text"
+                    class="area-prep lang__custom_text_placeholder"
+                    placeholder="Start typing here..."
+                    oninput="addText()"
+                  ></textarea>
+                </div>
+              </section>
+            </article>
+          </div>
+        </div>
 
         <nav class="nav">
-            <div class="nav_container">
-                <a href="https://typopaws.app/" class="nav_link">
-                    <img src="Assets/Keyboard icon.png" alt="Practise" class="nav_link-icon" title="Practise">
-                </a>
-                <a href="Preferences.html" class="nav_link">
-                    <img src="Assets/Gear icon.png" alt="Settings" class="nav_link-icon" title="Settings">
-                </a>
-                <a href="Info.html" class="nav_link">
-                    <img src="Assets/Info icon.png" alt="Info" class="nav_link-icon" title="Info">
-                </a>
-                <a href="https://github.com/Alderamine/TypoPaws" class="nav_link" target="_blank">
-                    <img src="Assets/github icon.svg" alt="Github" class="nav_link-icon" title="Github">
-                </a>
-            </div>
+          <div class="nav_container">
+            <a href="#" class="nav_link window_link" id="typer_window__link">
+              <img
+                src="Assets/Keyboard icon.png"
+                alt="Practise"
+                class="nav_link-icon"
+                title="Practise"
+              />
+            </a>
+            <a
+              href="Preferences.html"
+              class="nav_link window_link"
+              id="settings_window__link"
+            >
+              <img
+                src="Assets/Gear icon.png"
+                alt="Settings"
+                class="nav_link-icon"
+                title="Settings"
+              />
+            </a>
+            <a
+              href="Info.html"
+              class="nav_link window_link"
+              id="info_window__link"
+            >
+              <img
+                src="Assets/Info icon.png"
+                alt="Info"
+                class="nav_link-icon"
+                title="Info"
+              />
+            </a>
+            <a
+              href="https://github.com/Alderamine/TypoPaws"
+              class="nav_link"
+              target="_blank"
+            >
+              <img
+                src="Assets/github icon.svg"
+                alt="Github"
+                class="nav_link-icon"
+                title="Github"
+              />
+            </a>
+          </div>
         </nav>
-    </div>
+      </div>
 
-    <div class="footer">
+      <div class="footer">
         <div class="footer_contact-header">
-            <p>Contact me:</p>
+          <p class="lang__contact_me">Contact me:</p>
         </div>
         <div class="footer_contact">
-            <a href="https://alexsafonov.dev/" target="_blank">
-                <img src="Assets/ArrowDownRightCircle.png" alt="Arrow down">
-                <p>My website</p>
-            </a>
+          <a href="https://alexsafonov.dev/" target="_blank">
+            <img src="Assets/ArrowDownRightCircle.png" alt="Arrow down" />
+            <p class="lang__my_website">My website</p>
+          </a>
         </div>
         <div class="footer_contact">
-            <a href="mailto:oleksiisaf@gmail.com">
-                <img src="Assets/Mailbox.png" alt="Mail">
-                <p>Mail</p>
-            </a>
+          <a href="mailto:oleksiisaf@gmail.com">
+            <img src="Assets/Mailbox.png" alt="Mail" />
+            <p class="lang__mail">Mail</p>
+          </a>
         </div>
-    </div>
+      </div>
 
-    <div class="modal-container" id="modal-container">
+      <div class="modal-container" id="modal-container" >
         <div class="modal-window">
-            <div class="modal-window-wrapper">
-                <div class="modal-window-section">
-                    <h1 class="modal-window-header">Your result</h1>
-                    <button class="modal-window-close" id="modal-window-close" onclick="closeModal()">
-                        <img src="Assets/x.svg" alt="close" class="close-img">
-                    </button>
-                </div>
-                <div class="modal-window-section">
-                    <div class="modal-window-stat">
-                        <h3 class="modal-window-label">Speed</h3>
-                        <p class="modal-window-number" id="wpm"></p>
-                    </div>
-                    <div class="modal-window-stat">
-                        <h3 class="modal-window-label">Accuracy</h3>
-                        <p class="modal-window-number" id="accuracy"></p>
-                    </div>
-                    <div class="modal-window-stat" id="pointsContainer">
-                        <h3 class="modal-window-label">Points</h3>
-                        <p class="modal-window-number" id="points"></p>
-                    </div>
-                </div>
+          <div class="modal-window-wrapper">
+            <div class="modal-window-section">
+              <h2 class="modal-window-header lang__result">Your result</h2>
+              <button
+                class="modal-window-close"
+                id="modal-window-close"
+              >
+                <img src="Assets/x.svg" alt="close" class="close-img" />
+              </button>
+            </div>
+            <div class="modal-window-section">
+              <div class="modal-window-stat">
+                <h3 class="modal-window-label lang__speed">Speed</h3>
+                <p class="modal-window-number" id="wpm"></p>
+              </div>
+              <div class="modal-window-stat">
+                <h3 class="modal-window-label lang__accuracy">Accuracy</h3>
+                <p class="modal-window-number" id="accuracy"></p>
+              </div>
+              <div class="modal-window-stat" id="pointsContainer">
+                <h3 class="modal-window-label lang__points">Points</h3>
+                <p class="modal-window-number" id="display_points"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="modal-window-section">
+              <h2 class="modal-window-header modal_header--padding_top lang__progress">Your progress</h2>
             </div>
 
-            <div class="modal-window-wrapper">
-                <div class="modal-window-section-button">
-                    <div class="button-wrapper">
-                        <button class="modal-window-restart" id="modal-window-restart"
-                            onclick="closeModal()">Restart</button>
-                    </div>
-
-                </div>
+            <div class="stats__item">
+              <h3 class="lang__typing_speed">Typing Speed</h3>
+              <canvas id="speed_canvas"></canvas>
             </div>
+
+            <div class="stats__item">
+              <h3 class="lang__typing_ac">Typing Accuracy</h3>
+              <canvas id="accuracy_canvas"></canvas>
+            </div>
+
+            <div class="stats__item" id="points_stat">
+              <h3 class="lang__points">Points</h3>
+              <canvas id="points_canvas"></canvas>
+            </div>
+          </div>
+
+           <div class="modal-window-wrapper">
+            <div class="modal-window-section-button">
+              <div class="button-wrapper">
+                <button
+                  class="modal-window-restart lang__restart"
+                  id="modal-window-restart"
+                >
+                  Restart
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<script src="index_script.js"></script>
-<script src="nav_animation.js"></script>
-</body>
+    <script src="./js/index_script.js" type="module"></script>
+    <script src="./js/nav_animation.js"></script>
+    <script src="./js/preferences.js" type="module"></script>
+    <script src="./js/change_lang.js" type="module"></script>
 
+    <!-- languages -->
+    <script src="./languages/en.js" type="module"></script>
+    <script src="./languages/ua.js" type="module"></script>
+  </body>
 </html>
