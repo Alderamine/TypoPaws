@@ -55,15 +55,17 @@
         }
 
         .pressed_key {
-            background-color: #ffcfac;
-            border: none;
+            // background-color: #ffcfac;
+            // border: none;
+            transform: scale(1.05);
+            border-color: white;
         }
     }
 
     .secondary_key {
         position: absolute;
         bottom: 1.2rem;
-        color: var.$neutral-color;
+        color: rgb(143, 143, 143);
         right: 0.3rem;
         display: flex;
         align-items: center;
@@ -79,3 +81,39 @@
         justify-content: center;
     }
 }
+
+.finger-1 {
+    background-color: lighten(#f6dba4, 10%);
+    border: 2px solid #f6dba4;
+    border-bottom: 2px solid #f6dba4;
+}
+
+.finger-2 {
+    background-color: lighten(#f4b1b1, 10%);
+    border: 2px solid #f4b1b1;
+    // border: 2px solid #F4B1B1;
+}
+
+.finger-3 {
+    background-color: lighten(#c3e8b5, 10%);
+    border: 2px solid #c3e8b5;
+    border-bottom: 2px solid #c3e8b5;
+}
+
+.finger-4 {
+    background-color: lighten(#b6d5f0, 10%);
+    border: 2px solid #b6d5f0;
+    border-bottom: 2px solid #b6d5f0;
+}
+
+.finger-5 {
+    background-color: lighten(#bdcaeb, 10%);
+    border: 2px solid #bdcaeb;
+    border-bottom: 2px solid #bdcaeb;
+}
+
+.finger-6 {
+    background-color: var.$secondary-color;
+}
+
+

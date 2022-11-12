@@ -45,6 +45,7 @@
         padding-bottom: 16px;
         width: 100%;
         font-weight: 400;
+
         text-align: center;
         border-bottom: 1px solid var.$secondary-container-color;
     }
@@ -76,6 +77,7 @@
         font-weight: 500;
         font-size: 24px;
         text-align: center;
+        position: relative;
     }
 
     .close-img {
@@ -129,7 +131,7 @@
 
     h3 {
         font: var.$regular;
-        padding-bottom: .5rem;
+        padding-bottom: 0.5rem;
         color: var.$neutral-color;
         font-weight: bold;
     }
@@ -139,5 +141,19 @@
         background-color: lighten(var.$secondary-color, 3%);
         height: 10rem;
         border-radius: 1rem;
+    }
+}
+
+.improvement {
+    top: 0;
+    font-size: 0.8rem;
+    color: green;
+
+    &.positive {
+        color: green;
+    }
+
+    &.negative {
+        color: red;
     }
 }

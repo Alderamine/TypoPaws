@@ -1,6 +1,6 @@
-@forward 'upperBar';
-@forward 'typer';
-@forward 'keyboard';
+@forward "upperBar";
+@forward "typer";
+@forward "keyboard";
 
 .main {
     width: 80%;
@@ -10,4 +10,13 @@
     gap: 48px;
     margin-left: 64px;
     padding-bottom: 64px;
+}
+
+.fingers_img {
+    text-align: center;
+
+    img {
+        width: 20rem;
+        height: auto;
+    }
 }

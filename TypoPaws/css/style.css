@@ -379,13 +379,13 @@
   height: auto;
 }
 .keyboard_keyrows .pressed_key {
-  background-color: #ffcfac;
-  border: none;
+  transform: scale(1.05);
+  border-color: white;
 }
 .keyboard .secondary_key {
   position: absolute;
   bottom: 1.2rem;
-  color: #c4c4c4;
+  color: rgb(143, 143, 143);
   right: 0.3rem;
   display: flex;
   align-items: center;
@@ -400,6 +400,39 @@
   justify-content: center;
 }
 
+.finger-1 {
+  background-color: #fbedd2;
+  border: 2px solid #f6dba4;
+  border-bottom: 2px solid #f6dba4;
+}
+
+.finger-2 {
+  background-color: #fadede;
+  border: 2px solid #f4b1b1;
+}
+
+.finger-3 {
+  background-color: #e3f4dc;
+  border: 2px solid #c3e8b5;
+  border-bottom: 2px solid #c3e8b5;
+}
+
+.finger-4 {
+  background-color: #e0edf9;
+  border: 2px solid #b6d5f0;
+  border-bottom: 2px solid #b6d5f0;
+}
+
+.finger-5 {
+  background-color: #e4e9f7;
+  border: 2px solid #bdcaeb;
+  border-bottom: 2px solid #bdcaeb;
+}
+
+.finger-6 {
+  background-color: #ffefe3;
+}
+
 .main {
   width: 80%;
   padding: 16px;
@@ -408,6 +441,14 @@
   gap: 48px;
   margin-left: 64px;
   padding-bottom: 64px;
+}
+
+.fingers_img {
+  text-align: center;
+}
+.fingers_img img {
+  width: 20rem;
+  height: auto;
 }
 
 .footer {
@@ -424,7 +465,7 @@
 }
 .footer img {
   width: 16px;
-  height: auto;
+  height: 16px;
   transition: transform 0.5s;
 }
 .footer a {
@@ -505,6 +546,7 @@
   font-weight: 500;
   font-size: 24px;
   text-align: center;
+  position: relative;
 }
 .modal-window .close-img {
   width: 100%;
@@ -560,6 +602,18 @@
   background-color: #fff8f2;
   height: 10rem;
   border-radius: 1rem;
+}
+
+.improvement {
+  top: 0;
+  font-size: 0.8rem;
+  color: green;
+}
+.improvement.positive {
+  color: green;
+}
+.improvement.negative {
+  color: red;
 }
 
 .container {
@@ -626,7 +680,7 @@
 }
 .about-section-resources a img {
   width: 16px;
-  height: auto;
+  height: 16px;
 }
 
 .select-pref {
@@ -733,6 +787,47 @@
 }
 .submit-button:focus {
   outline: 2px solid #ffcfac;
+}
+
+.preferences-file {
+  display: flex;
+  width: 100%;
+  margin-top: 2rem;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+}
+.preferences-file input {
+  display: none;
+}
+.preferences-file label {
+  font-size: 1rem;
+}
+.preferences-file button {
+  background-color: #ffcfac;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+}
+.preferences-file p {
+  color: #c4c4c4;
+  font-size: 0.9rem;
+  max-width: 10rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.preferences-file div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.preferences-file .delete {
+  background-color: transparent;
+  color: red;
+  padding: 0;
+  font-size: 0.8rem;
+  display: none;
 }
 
 .preferences {

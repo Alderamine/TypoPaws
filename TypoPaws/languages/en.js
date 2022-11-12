@@ -58,4 +58,7 @@ languageSet.set("lang__progress", "Your progress");
 languageSet.set("lang__typing_speed", "Typing Speed");
 languageSet.set("lang__typing_ac", "Typing Accuracy");
 
+languageSet.set("lang__your_file", "Your file (.txt)");
+languageSet.set("lang__choose", "Choose file");
+
 export const en = new Language("EN", languageSet, enTyperSet, "en_keyboard");

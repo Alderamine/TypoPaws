@@ -16,7 +16,7 @@ export default class Language {
       pickedLang = Language.languages.find((lang) => lang.abbr === "EN");
     }
     localStorage.setItem("lang", pickedLang.abbr);
-
+    document.getElementById("language").value = pickedLang.abbr;
     Language._langSet(pickedLang.languageSet);
     Language._setKeyboard();
   }

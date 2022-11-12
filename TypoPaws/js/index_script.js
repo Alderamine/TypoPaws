@@ -153,7 +153,7 @@ function setWords(number, percent) {
       } while (randomPos > localArray.length - 1 - number);
 
       for (let i = randomPos, j = number; j > 0; j--, i++) {
-        string = localArray[i] + " ";
+        let string = localArray[i] + " ";
         generatedText.push(string);
       }
     }
@@ -239,16 +239,23 @@ function released(node) {
 }
 
 function removeFocus() {
-  document.querySelector(".keyboard").style.opacity =
-    document.querySelector(".typer_regulators").style.opacity =
+  for (let keyboard of document.getElementsByClassName("keyboard")) {
+    keyboard.style.opacity = 1;
+  }
+  document.querySelector(".typer_regulators").style.opacity =
+    document.querySelector(".fingers_img").style.opacity =
     document.querySelector(".footer").style.opacity =
     document.querySelector(".nav").style.opacity =
       1;
 }
 
 function focus() {
-  document.querySelector(".keyboard").style.opacity =
-    document.querySelector(".typer_regulators").style.opacity =
+  for (let keyboard of document.getElementsByClassName("keyboard")) {
+    keyboard.style.opacity = 0;
+  }
+
+  document.querySelector(".typer_regulators").style.opacity =
+    document.querySelector(".fingers_img").style.opacity =
     document.querySelector(".footer").style.opacity =
     document.querySelector(".nav").style.opacity =
       0;
@@ -344,22 +351,52 @@ function typeSymbol(symbol) {
 
 // --> functions for stats
 function calculateStats(start, mistakes) {
+  const stats = localStorage.getItem("stats")
+    ? JSON.parse(localStorage.getItem("stats"))
+    : [0];
+
+  const statsSpeed = stats.map((i) => i.speed);
+  const statsAccuracy = stats.map((i) => i.accuracy);
+  const statsPoints = stats.map((i) => i.points);
+
   const finish = new Date();
   let sum = 0;
   lines.forEach((a) => {
     sum += a.length;
   });
   sum--;
+
   const speed = Math.round((sum * 10) / ((finish.getTime() - start) / 1000));
   document.getElementById("wpm").innerText = `${speed} WPM`;
+  calculateImprovements(speed, statsSpeed, "wpm_improvement");
 
   const accuracy = (((sum - mistakes) / sum) * 100).toFixed(2);
   document.getElementById("accuracy").innerText = `${accuracy}%`;
+  calculateImprovements(accuracy, statsAccuracy, "accuracy_improvement");
 
   const points = Math.round(speed * accuracy);
   document.getElementById("display_points").innerText = `${points}`;
+  calculateImprovements(points, statsPoints, "display_points_improvement");
 
   saveStats(speed, accuracy, points);
+}
+
+function calculateImprovements(currentValue, stats, elId) {
+  let improvement = Math.ceil(
+    currentValue - stats.reduce((a, b) => a + b) / stats.length
+  );
+  if (!improvement) improvement = 0;
+
+  const el = document.getElementById(elId);
+  el.classList.remove("positive", "negative");
+
+  if (improvement > 0) {
+    el.innerText = `+${improvement}`;
+    el.classList.add("positive");
+  } else {
+    el.innerText = improvement;
+    el.classList.add("negative");
+  }
 }
 
 function saveStats(speed, accuracy, points) {
@@ -440,7 +477,7 @@ function displayChart(data, canvasId) {
 
   ctx.moveTo(25, canvas.height / 2);
   ctx.lineTo(canvas.width, canvas.height / 2);
-  ctx.fillText((max + min) / 2, 2, canvas.height / 2);
+  ctx.fillText(Math.round((max + min) / 2), 2, canvas.height / 2);
 
   ctx.moveTo(25, canvas.height - 25);
   ctx.lineTo(canvas.width, canvas.height - 25);
@@ -462,6 +499,10 @@ window.addEventListener("resize", () => {
 
 window.addEventListener("load", () => {
   Language.changeLang(localStorage.getItem("lang"));
+  if (localStorage.getItem("file_name")) {
+    filePar.innerHTML = localStorage.getItem("file_name");
+    fileDel.style.display = "block";
+  }
   const wordsValue = localStorage.getItem("wordsValue")
     ? localStorage.getItem("wordsValue")
     : 60;
@@ -650,3 +691,42 @@ for (let link of document.getElementsByClassName("window_link")) {
     }
   });
 }
+
+const fileButton = document.getElementById("file_button");
+const fileInput = document.getElementById("file_input");
+const filePar = document.getElementById("file_name");
+const fileDel = document.getElementById("delete");
+const textArea = document.getElementById("custom-text");
+
+fileButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  fileInput.click();
+});
+
+fileInput.addEventListener("change", (e) => {
+  filePar.innerText = fileInput.files[0].name;
+  localStorage.setItem("file_name", fileInput.files[0].name);
+  const reader = new FileReader();
+
+  reader.onload = (function (reader) {
+    return function () {
+      var contents = reader.result;
+      console.log(contents);
+      textArea.value = contents;
+      localStorage.setItem("custom-text", textArea.value);
+    };
+  })(reader);
+
+  reader.readAsText(fileInput.files[0]);
+  fileDel.style.display = "block";
+});
+
+fileDel.addEventListener("click", () => {
+  fileInput.value = "";
+  filePar.innerText = "";
+  fileDel.style.display = "";
+  textArea.value = "";
+  localStorage.setItem("custom-text", "");
+  localStorage.removeItem("file_name");
+});
+

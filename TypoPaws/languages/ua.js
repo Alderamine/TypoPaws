@@ -53,4 +53,7 @@ languageSet.set("lang__progress", "Прогрес");
 languageSet.set("lang__typing_speed", "Швидкість друку");
 languageSet.set("lang__typing_ac", "Точність друку");
 
+languageSet.set("lang__your_file", "Ваш файл (.txt)");
+languageSet.set("lang__choose", "Обрати");
+
 export const ua = new Language("UA", languageSet, uaTyperSet, "ua_keyboard");

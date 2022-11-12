@@ -34,13 +34,13 @@ function changeSetting(name, checked) {
   localStorage.setItem(name, "off");
 }
 
-function addText() {
+document.getElementById("custom-text").addEventListener("change", () => {
   localStorage.removeItem("custom-text");
   localStorage.setItem(
     "custom-text",
     document.getElementById("custom-text").value
   );
-}
+});
 
 // --> preferences events
 document.getElementById("skip-mistakes").addEventListener("click", () => {
