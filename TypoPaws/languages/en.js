@@ -8,7 +8,10 @@ languageSet.set("lang__punct_percent", "Punctuation percent");
 languageSet.set("lang__about", "About");
 languageSet.set(
   "lang__about_par",
-  `TypoPaws is an online tool to help you improve or just check
+  `
+  The blind typing method, or the ten-finger typing method, refers to typing text "blindly" or, in other words, without looking at the keys of the typewriter or the keys of the computer keyboard. At the same time, all ten fingers are used (although it is possible to use less fingers), it has existed for more than 120 years.
+<br>Words/characters per minute, usually abbreviated wpm (sometimes capitalized WPM), is the number of words a person types per minute and is often used to measure typing speed.
+  TypoPaws is an online tool to help you improve or just check
                     your typing skills. Its main purpose is to give you a start
                     in your typing journey with the ability to track your
                     performance after each try. TypoPaws is completely free and

@@ -75,21 +75,19 @@ function createLines(wordsSet, firstLine = true) {
   const p = document.createElement("p");
   p.id = `p${linesIndicator}`;
   typingField.append(p);
-  let currentP = document.getElementById(`p${linesIndicator}`);
+  let currentP = p;
 
   for (let j = 1, i = 0; i < wordsSet.length; i++) {
     let word = document.createElement("span");
     word.id = `word${linesIndicator}_${i}`;
     word.appendChild(document.createTextNode(wordsSet[i]));
-    document.getElementById(`p${linesIndicator}`).append(word);
+    p.append(word);
 
-    if (currentP.clientHeight > 30) {
+    if (currentP.offsetHeight > 30) {
       do {
-        currentP.removeChild(
-          document.getElementById(`word${linesIndicator}_${i - j}`)
-        );
+        currentP.removeChild(currentP.lastChild);
         j++;
-      } while (currentP.clientHeight > 30);
+      } while (currentP.offsetHeight > 30);
       ++linesIndicator;
 
       return createLines(wordsSet.slice(i + 1), false);
@@ -126,7 +124,7 @@ function setWords(number, percent) {
   if (!localStorage.getItem("custom-text")) {
     for (
       let i = 0, j = Math.floor(100 / percent), string = "";
-      i < number;
+      i <= number;
       i++
     ) {
       if (i !== 0 && i % j === 0) {
@@ -499,10 +497,12 @@ window.addEventListener("resize", () => {
 
 window.addEventListener("load", () => {
   Language.changeLang(localStorage.getItem("lang"));
+
   if (localStorage.getItem("file_name")) {
     filePar.innerHTML = localStorage.getItem("file_name");
     fileDel.style.display = "block";
   }
+
   const wordsValue = localStorage.getItem("wordsValue")
     ? localStorage.getItem("wordsValue")
     : 60;
@@ -514,7 +514,7 @@ window.addEventListener("load", () => {
   document
     .getElementById("Punctuation")
     .setAttribute("value", punctuationValue);
-
+  // document.getElementById("typer_window__link").click();
   checkSettings();
   wordsCount(wordsValue, punctuationValue);
   punctuationCount(wordsValue, punctuationValue);
@@ -711,7 +711,6 @@ fileInput.addEventListener("change", (e) => {
   reader.onload = (function (reader) {
     return function () {
       var contents = reader.result;
-      console.log(contents);
       textArea.value = contents;
       localStorage.setItem("custom-text", textArea.value);
     };
@@ -729,4 +728,3 @@ fileDel.addEventListener("click", () => {
   localStorage.setItem("custom-text", "");
   localStorage.removeItem("file_name");
 });
-
