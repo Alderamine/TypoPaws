@@ -83,11 +83,11 @@ function createLines(wordsSet, firstLine = true) {
     word.appendChild(document.createTextNode(wordsSet[i]));
     p.append(word);
 
-    if (currentP.offsetHeight > 30) {
+    if (currentP.offsetHeight > 30 || currentP.clientHeight > 30) {
       do {
         currentP.removeChild(currentP.lastChild);
         j++;
-      } while (currentP.offsetHeight > 30);
+      } while (currentP.offsetHeight > 30 || currentP.clientHeight > 30);
       ++linesIndicator;
 
       return createLines(wordsSet.slice(i + 1), false);
