@@ -158,8 +158,6 @@ function setWords(number, percent) {
   }
 
   createLines(generatedText);
-  // document.getElementById(`p${linesIndicator}`).textContent +=
-  //   generatedText[generatedText.length - 1];
 
   createDisplay();
 }
